@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>所看，所見，所作：台いすき 的跨文化創生</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 設定字體和風格 - 沿用專欄的設計 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .article-content {
+            font-family: 'Noto Serif TC', serif;
+            line-height: 2.1;
+            color: #1f2937; /* text-gray-800 */
+        }
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        /* 圖片樣式 */
+        .article-content img {
+            display: block;
+            margin: 2.5rem auto; 
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+        }
+        .pull-quote {
+            border-left: 4px solid #A0AEC0; /* 灰色作為 職人生活 的主題色 */
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.125rem;
+            color: #4b5563; 
+        }
+        .lang-active {
+            background-color: #f3f4f6; 
+            border-color: #d1d5db; 
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 翻譯資料物件
+        const translations = {
+            "nav_slogan": { "zh": "喜歡台灣 也喜歡日本", "en": "Love Taiwan, Love Japan", "jp": "台湾が好き、日本も好き" },
+            "nav_zh": { "zh": "中文", "en": "Chinese", "jp": "中文" },
+            "nav_en": { "zh": "英文", "en": "English", "jp": "英語" },
+            "nav_jp": { "zh": "日文", "en": "Japanese", "jp": "日本語" },
+            "nav_subscribe": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" },
+            "nav_back_home": { "zh": "回主頁", "en": "Home", "jp": "ホームへ" },
+            "nav_save": { "zh": "收藏", "en": "Save", "jp": "保存" },
+
+            "col4_category": { "zh": "職人生活", "en": "ARTISAN LIFE", "jp": "職人ライフ" },
+            "col4_issue_type": { "zh": "ISSUE. 001", "en": "ISSUE. 001", "jp": "ISSUE. 001" },
+            "col4_title": { "zh": "所看，所見，所作：台いすき 的跨文化創生", "en": "What is Seen, What is Encountered, What is Made: The Cross-Cultural Creation of Tai-Isuki", "jp": "見たもの、出会ったもの、作ったもの：台いすき の異文化間創生" },
+            "col4_subtitle": { "zh": "台いすき 的創生來自日文的「大好」（Daisuki），傳達創意總監多年來在台日旅行生活，並透過衣、食、旅、器、感，將台灣的親切與日本的設計美學相容，創造台日旅人的美好相遇。", "en": "Tai-Isuki's creation stems from the Japanese pun 'Daisuki' (Love it), conveying the curator's journey across Taiwan and Japan. Through Clothing, Food, Travel, Objects, and Sensation, it blends Taiwan's warmth with Japanese design aesthetics, creating beautiful encounters for travelers.", "jp": "台いすきの創生は、日本語の「大好き」（Daisuki）のダジャレから来ており、台湾と日本を旅して生活してきたキュレーターの文化アイデンティティを表現しています。衣・食・旅・器・感を通じて、台湾の親しみやすさと日本のデザイン美学を融合させ、日台の旅人の美しい出会いを創造します。" },
+            "col4_author": { "zh": "撰文 | Tai-Isuki 編輯部", "en": "Writer | Tai-Isuki Editorial Team", "jp": "著者 | 台いすき編集部" },
+            "col4_date": { "zh": "2025.10.26", "en": "2025.10.26", "jp": "2025.10.26" },
+            
+            "sec1_title": { "zh": "「大好」的諧音：跨越語言的雙文化熱愛", "en": "The Pun of 'Daisuki': A Cross-Lingual, Bi-Cultural Love", "jp": "「大好き」の語呂合わせ：言葉を超えた二文化への愛" },
+            "sec1_p1": { "zh": "「台いすき」這個名字本身就是一種文化宣言。它來自日文「大好き」（Daisuki，大好）的同音梗，巧妙地將「台灣」的『台』融入其中，直接傳達了主理人對台灣與日本兩種文化發自內心的熱愛。這份熱愛並非單向的追捧，而是源於多年來在兩地間的旅行、居住與生活實踐，所積累出的深刻理解與身份認同。", "en": "The name 'Tai-Isuki' itself is a cultural manifesto. It stems from the Japanese pun on 'Daisuki' (Love it), subtly incorporating 'Taiwan' (台) to directly convey the curator's heartfelt passion for both Taiwanese and Japanese cultures. This passion is not mere admiration but originates from years of travel, residence, and life practice in both locations, culminating in deep understanding and identity.", "jp": "「台いすき」という名前自体が文化的な宣言です。日本語の「大好き」（Daisuki）の語呂合わせから生まれ、巧妙に「台湾」の『台』を取り入れ、キュレーターの台湾と日本両文化への心からの愛を直接伝えています。この愛情は単なる憧れではなく、長年にわたる両地域での旅、居住、生活実践から培われた深い理解とアイデンティティに基づいています。" },
+            "sec1_p2": { "zh": "主理人的文化身份，是遊走在兩種美學之間：既被日本極致的細節、工整的設計所吸引，同時又無法割捨台灣人情社會中那份直率、溫暖和隨性的親切感。品牌的核心理念，便是要將這種看似衝突的特質，融合成一種獨特的「台日系生活美學」。", "en": "The curator's cultural identity navigates between two aesthetics: drawn to Japan's extreme detail and structured design, yet unable to abandon the directness, warmth, and casual kindness found in Taiwanese society. The brand's core mission is to synthesize these seemingly conflicting traits into a unique 'Taiwan-Japan lifestyle aesthetic.'", "jp": "キュレーターの文化的アイデンティティは、二つの美学の間をさまよいます。日本の究極のディテールと整然としたデザインに魅了されつつ、台湾の人情社会にある率直さ、温かさ、そして気軽な親しみやすさを捨てることができません。ブランドの核となる理念は、この一見矛盾する特質を融合させ、「独自の台日系ライフスタイル美学」を創造することにあります。" },
+            
+            "sec2_title": { "zh": "穿上文化身份：從服飾表達「我們是誰」", "en": "Wearing Cultural Identity: Expressing 'Who We Are' Through Apparel", "jp": "文化的アイデンティティを纏う：服飾を通じて「私たちは誰か」を表現する" },
+            "sec2_p1": { "zh": "服飾是品牌最直接的文化載體。「台いすき」的衣著，不僅是設計，更是關於文化認同的表達。透過服飾的設計，傳達出在台日文化差異與相同之處的觀察。例如，將台灣傳統的元素（如花磚圖案、特有口語）以日本簡約、低飽和度的設計手法呈現，使之既親切又具備國際感。", "en": "Apparel is the brand's most direct cultural medium. 'Tai-Isuki' clothing is not just design; it's an expression of cultural identity. The clothing conveys observations on the differences and similarities between Taiwanese and Japanese cultures. For instance, traditional Taiwanese elements (like tile patterns or unique colloquialisms) are presented using Japanese minimalist, low-saturation design methods, making the apparel both approachable and internationally appealing.", "jp": "服飾はブランドの最も直接的な文化の媒体です。「台いすき」の服は、デザインだけでなく、文化的なアイデンティティの表現でもあります。服のデザインを通じて、日台文化の差異と共通点に関する考察を伝えます。例えば、台湾の伝統的な要素（花柄のタイル模様、特有の口語など）を、日本のミニマリスト的で彩度の低いデザイン手法で表現し、親しみやすく、かつ国際的な魅力を兼ね備えさせています。" },
+            "sec2_p2": { "zh": "這種跨文化的融合，不僅讓台灣旅人能以獨特的方式展現「我們是誰」，也讓日本旅人在日常中感受到台灣的親切。服飾成為一種「美好相遇」的媒介，讓語言不通的旅人，也能透過衣服上的符號，會心一笑，建立起跨越國界的連結。", "en": "This cross-cultural fusion not only allows Taiwanese travelers to uniquely express 'who they are' but also lets Japanese travelers feel Taiwan's kindness in their daily lives. Apparel serves as a medium for 'beautiful encounters,' enabling travelers who don't speak the same language to share a knowing smile through the symbols on their clothes, establishing cross-border connections.", "jp": "この異文化間の融合は、台湾の旅行者が「私たちは誰か」を独自の方法で表現できるようにするだけでなく、日本の旅行者が日常生活の中で台湾の親切さを感じられるようにします。服は「美しい出会い」の媒介となり、言葉が通じない旅行者同士でも、服に描かれたシンボルを通じて、心からの笑みを交わし、国境を越えた繋がりを築くことができます。" },
+            
+            "sec3_title": { "zh": "五感體驗：衣、食、旅、器、感 的全方位融合", "en": "Five Senses Experience: The Integration of Clothing, Food, Travel, Objects, and Sensation", "jp": "五感体験：衣・食・旅・器・感の全方位的な融合" },
+            "sec3_p1": { "zh": "台いすき 的生活哲學，體現在「衣、食、旅、器、感」五個維度的全方位融合中：<br> • **衣 (Clothing)**：跨文化設計的服飾，表達身份認同。<br> • **食 (Food)**：結合日式擺盤與台式風味的餐飲體驗。<br> • **旅 (Travel)**：深度探索兩地巷弄的慢旅行哲學。<br> • **器 (Objects)**：台日職人共同製作，帶有日式極簡感與台式溫度的生活器物。<br> • **感 (Sensation)**：透過所有媒介傳遞出的，是台灣人特有的那份溫柔、隨和、和對生活細節的敏感。", "en": "Tai-Isuki's life philosophy is reflected in the comprehensive integration of five dimensions: Clothing, Food, Travel, Objects, and Sensation (Kinship):<br> • **Clothing**: Cross-cultural apparel expressing identity.<br> • **Food**: Dining experiences blending Japanese presentation with Taiwanese flavors.<br> • **Travel**: The philosophy of slow travel and deep exploration of local alleys in both regions.<br> • **Objects**: Lifestyle objects collaboratively made by Taiwanese and Japanese artisans, possessing Japanese minimalism and Taiwanese warmth.<br> • **Sensation (Kinship)**: The unique gentleness, easygoing nature, and sensitivity to life's details inherent in the Taiwanese spirit, conveyed through all media.", "jp": "台いすきの生活哲学は、「衣・食・旅・器・感」の五つの側面での包括的な融合に反映されています。<br> • **衣 (Clothing)**：アイデンティティを表現する異文化デザインの服飾。<br> • **食 (Food)**：日本の盛り付けと台湾の風味を組み合わせた飲食体験。<br> • **旅 (Travel)**：両地域の路地裏を深く探求するスロートラベルの哲学。<br> • **器 (Objects)**：日台の職人が共同で製作した、日本のミニマリズムと台湾の温かさを持つ生活用品。<br> • **感 (Sensation)**：すべての媒体を通じて伝えられる、台湾人特有の優しさ、気楽さ、そして生活の細部への敏感さ。" },
+            
+            "sec3_p2": { "zh": "這種全方位的設計，讓台いすき不僅僅是一個品牌，而是一種**生活風格的提案者**。它邀請所有認同這份跨文化美學的人，無論是台灣人、日本人還是其他國家的旅人，都能在這份美好中找到共鳴，並將這份溫柔的相遇延續到自己的日常中。", "en": "This comprehensive design positions Tai-Isuki not just as a brand, but as a **proponent of a lifestyle**. It invites everyone who identifies with this cross-cultural aesthetic, whether Taiwanese, Japanese, or travelers from other countries, to find resonance in this beauty and carry this gentle encounter into their daily lives.", "jp": "この全方位的なデザインは、台いすきを単なるブランドではなく、**ライフスタイルの提案者**として位置づけています。この異文化間の美学に共感するすべての人々、台湾人であれ、日本人であれ、他の国の旅行者であれ、この素晴らしさの中に共鳴を見つけ、この穏やかな出会いを自身の日常に引き継ぐよう誘っています。" },
+            
+            "sec4_title": { "zh": "所看，所見，所作：從觀察到實踐的美學", "en": "What is Seen, What is Encountered, What is Made: The Aesthetic from Observation to Practice", "jp": "見たもの、出会ったもの、作ったもの：観察から実践への美学" },
+            "sec4_p1": { "zh": "專欄四的標題「所看，所見，所作」，總結了主理人的實踐路徑：**所看**（觀察並理解兩種文化），**所見**（將差異與共鳴內化為設計靈感），最終成就了 **所作**（創造出跨越國界、充滿溫度的台日系生活物件與體驗）。這不僅是職人精神的體現，更是對「生活大好」哲學的堅持。", "en": "The title of Column Four, 'What is Seen, What is Encountered, What is Made,' summarizes the curator's path: **What is Seen** (observing and understanding both cultures), **What is Encountered** (internalizing differences and resonance into design inspiration), ultimately leading to **What is Made** (creating cross-border, warm Taiwan-Japan lifestyle objects and experiences). This is not just an expression of the artisan spirit, but a commitment to the philosophy of 'Life is Great' (Daisuki).", "jp": "コラム四のタイトル「所看，所見，所作」は、キュレーターの実践経路を要約しています。**見たもの**（二つの文化を観察し理解する）、**出会ったもの**（差異と共感をデザインのインスピレーションに内面化する）、そして最終的に**作ったもの**（国境を越え、温もりあふれる日台系生活用品と体験を創造する）へと繋がります。これは職人精神の具現化であると同時に、「生活大好」という哲学へのこだわりでもあります。" },
+            
+            "share_title": { "zh": "分享這份美好", "en": "Share the Beauty", "jp": "この美しさをシェア" },
+
+            "footer_issue_title": { "zh": "001期美好駁二", "en": "Issue 001: Beautiful Pier-2", "jp": "001号 美しい駁二" },
+            "footer_terms": { "zh": "服務條款", "en": "Terms of Service", "jp": "利用規約" },
+            "footer_privacy": { "zh": "隱私權政策", "en": "Privacy Policy", "jp": "プライバシーポリシー" },
+            "footer_about": { "zh": "關於我們", "en": "About Us", "jp": "会社概要" },
+            "footer_brand": { "zh": "品牌故事", "en": "Brand Story", "jp": "ブランドストーリー" },
+            "footer_team": { "zh": "編輯團隊", "en": "Editorial Team", "jp": "編集チーム" },
+            "footer_contact": { "zh": "合作洽談", "en": "Business Inquiries", "jp": "ビジネス提携" },
+            "footer_category": { "zh": "專欄分類", "en": "Categories", "jp": "コラム分類" },
+            "footer_newsletter_title": { "zh": "訂閱電子報", "en": "Subscribe to Newsletter", "jp": "ニュースレター購読" },
+            "footer_newsletter_desc": { "zh": "掌握最新台日潮流與深度報導，每週發送一次。", "en": "Stay updated with the latest Taiwan-Japan trends and in-depth reports, sent weekly.", "jp": "最新の台日トレンドと深掘りレポートを毎週お届けします。" },
+            "footer_email_placeholder": { "zh": "輸入您的 Email", "en": "Enter your Email", "jp": "メールアドレスを入力" },
+            "footer_subscribe_button": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" }
+        };
+
+        let currentLang = 'zh'; 
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    if (el.tagName === 'INPUT' && el.type === 'email') {
+                        el.placeholder = translations[key][lang];
+                    } else {
+                        el.textContent = translations[key][lang];
+                    }
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                btn.classList.remove('lang-active');
+                if (btnLang === lang) {
+                    btn.classList.add('lang-active');
+                }
+            });
+            document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'en' ? 'en' : 'zh-Hant');
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
+            });
+            setLanguage('zh'); 
+            
+            // 訂閱表單處理 (Apps Script) - 假設這是處理邏輯
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec'; 
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('email-input').value.trim();
+                    const messageDiv = document.getElementById('subscription-message');
+                    
+                    if (!email || !email.includes('@')) {
+                        messageDiv.textContent = '請檢查 Email 格式。';
+                        messageDiv.className = 'text-sm mt-3 text-red-500';
+                        return;
+                    }
+                    
+                    messageDiv.textContent = '處理中...';
+                    messageDiv.className = 'text-sm mt-3 text-yellow-500';
+
+                    // 這裡應有實際的 fetch 邏輯，目前為模擬
+                    setTimeout(() => {
+                        messageDiv.textContent = '✅ 訂閱成功！';
+                        messageDiv.className = 'text-sm mt-3 text-green-500';
+                        document.getElementById('email-input').value = '';
+                    }, 1500);
+                });
+            }
+        };
+    </script>
+
+    
+    <!-- 導航列 (刊頭) -->
+    <nav class="bg-white shadow-md w-full sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-40 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-4 flex-grow">
+                <a href="index.html" class="flex items-end">
+                    <!-- 您的 Logo 圖片佔位符 -->
+                    <img src="logonew.png" alt="台いすき Logo" class="h-40">
+                </a>
+                <p class="hidden md:block text-gray-600 text-base font-medium" data-i18n="nav_slogan">喜歡台灣 也喜歡日本</p>
+            </div>
+            
+            <div class="flex items-center space-x-3 text-sm">
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 border border-gray-300 rounded hover:bg-gray-100 transition" data-lang="zh" data-i18n="nav_zh">中文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="en" data-i18n="nav_en">英文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="jp" data-i18n="nav_jp">日文</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition" data-i18n="nav_subscribe">訂閱</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 專欄內容主區塊 -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- 頂部資訊與標題 -->
+        <header class="text-center mb-12">
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-gray-700 bg-gray-100 rounded-full mb-4" data-i18n="col4_issue_type">
+                ISSUE. 001
+            </span>
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-gray-700 bg-gray-100 rounded-full mb-4" data-i18n="col4_category">
+                職人生活
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 font-serif" data-i18n="col4_title">
+                所看，所見，所作：台いすき 的跨文化創生
+            </h1>
+            <p class="text-lg text-gray-500 italic max-w-2xl mx-auto mb-6" data-i18n="col4_subtitle">
+                台いすき 的創生來自日文的「大好」（Daisuki），傳達創意總監多年來在台日旅行生活，並透過衣、食、旅、器、感，將台灣的親切與日本的設計美學相容，創造台日旅人的美好相遇。
+            </p>
+            <div class="flex justify-center items-center mt-3 text-gray-600 text-sm">
+                <span class="mr-4" data-i18n="col4_author">撰文 | Tai-Isuki 編輯部</span>
+                <span><i class="far fa-clock mr-1"></i> <span data-i18n="col4_date">2025.10.26</span></span>
+            </div>
+        </header>
+
+        <!-- 主視覺圖 - 主理人形象 -->
+        <figure class="mb-12">
+            <img src="03.png" alt="台いすき主理人的肖像或生活場景" class="w-full rounded-xl">
+            <figcaption class="text-center mt-3 text-sm text-gray-500">
+                創意總監遊走於台日文化之間，將生活實踐融入品牌精神。
+            </figcaption>
+        </figure>
+
+        <!-- 文章內容 -->
+        <article class="article-content max-w-none prose lg:prose-lg mx-auto">
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec1_title">
+                「大好」的諧音：跨越語言的雙文化熱愛
+            </h2>
+            
+            <p data-i18n="sec1_p1">
+                「台いすき」品牌來自於我們的文化設計。我們覺得一個品牌不只在於告訴別人我們是誰？更來自於我們的共理心，以日文「大好き」（Daisuki，大好）的同音梗，巧妙地將「台灣」的『台』融入其中，直接傳達了我們對台灣與日本兩種文化發自內心的喜愛。這份喜愛並非單向的追捧，而是源於多年來在兩地間的、居住與生活共感，所積累出來的善意設計。
+            </p>
+            <img src="d04.png" alt="象徵台日連結的視覺概念圖" loading="lazy">
+            
+            <p data-i18n="sec1_p2">
+                台灣人讀設計的，電影的，經常浸潤在台日美學之間：我們被日本極致的細節、美學與哲學的設計所吸引，同時又無法割捨台灣人情社會中那份親切、溫暖和隨性的親切感。品牌的核心理念，便是要將這種看似衝突的特質，融合成一種獨特的「台日系生活美學」。
+            </p>
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec2_title">
+                穿上文化身份：從服飾表達「我們是誰」到我們的善意表達
+            </h2>
+            
+            <p data-i18n="sec2_p1">
+                服裝是品牌最直接的文化觀點。「台いすき」的衣著，不僅是設計，更是關於文化的善意傳達。透過服飾的設計，表現出我們的身長，環境。例如，將台灣傳統的元素（如傳統圖案、特有口語）以日本簡約、低飽和度的設計手法呈現，使之既親切又具備國際感。
+            </p>
+            <img src="d03.png" alt="台いすき品牌服飾設計展示" loading="lazy">
+
+            <p data-i18n="sec2_p2">
+                這種跨文化的融合，不僅讓台灣旅人能以獨特的方式展現「我們是誰」，也讓日本旅人在日常中感受到台灣的親切與日本文化的善意與尊重。服飾成為一種「美好相遇」的媒介，讓語言不通的旅人，也能透過衣服上的符號，會心一笑，建立起跨越國界的連結。
+            </p>
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec3_title">
+                大好的體驗：衣、食、旅、器、感 的共感
+            </h2>
+            
+            <p data-i18n="sec3_p">
+                台いすき 的生活哲學，體現在「衣、食、旅、器、感」五個維度的全方位共鳴中： • **衣 (Clothing)**：跨文化設計的服飾，表達身為旅客的尊重與善意 • **食 (Food)**：職選日式與台式風格的味蕾口好。• **旅 (Travel)**：相遇兩地棲居的種種美好事物 • **器 (Objects)**：感受台日物件帶來生活的小感動。 • **感 (Sensation)**：透過所有媒介傳遞出的，是台日的那份微暖、細微、和對生活細微的好感。
+            </p>
+            <img src="d005.png" alt="台日職人製作的生活器物" loading="lazy">
+            
+            <p data-i18n="sec3_p2">
+                這樣的文化設計，我們希望台いすき不僅僅是一個品牌，而是一種**當下生活風格的提案者**。我們誠摯邀請所有認同這份跨文化美學的人，無論是台灣人、日本人還是其他國家的旅人，都能在這份美好中找到共鳴，並將這份溫柔的相遇延續到自己的日常中。
+            </p>
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec4_title">
+                所看，所見，所作：從觀察到實踐的美學
+            </h2>
+            
+            <p data-i18n="sec4_p1">
+                專欄四的標題「所看，所見，所作」，總結了JILL&tommy的實踐路徑：**所看**（觀察並理解兩種文化），**所見**（將差異與共鳴內化為設計靈感），最終成就了 **所作**（創造出跨越國界、充滿溫度的台日系生活物件與體驗）。這不僅是職人精神的體現，更是對「生活大好」哲學的堅持。
+            </p>
+            <img src="d006.png" alt="台日旅行中的觀察點滴" loading="lazy">
+            
+        </article>
+        
+        <!-- 簡潔文章底部分享區塊 -->
+        <footer class="mt-8 pt-4 border-t border-gray-200 text-center py-6">
+            <h3 class="text-xl font-bold text-gray-700 mb-4" data-i18n="share_title">分享這份美好</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-line"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="far fa-envelope"></i></a>
+            </div>
+        </footer>
+
+    </main>
+    
+    <!-- 完整頁尾區塊 -->
+    <footer class="bg-gray-800 text-white mt-16 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_newsletter_title">訂閱電子報</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="footer_newsletter_desc">掌握最新台日潮流與深度報導，每週發送一次。</p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row relative">
+                        <!-- 請注意: 這個表單需要您部署 Apps Script 才能真正寫入資料 -->
+                        <input id="email-input" type="email" data-i18n="footer_email_placeholder" placeholder="輸入您的 Email" class="p-3 w-full rounded-t-lg sm:rounded-l-lg sm:rounded-t-none text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-b-lg sm:rounded-r-lg sm:rounded-b-none font-medium transition" data-i18n="footer_subscribe_button">訂閱</button>
+                    </form>
+                    <div id="subscription-message" class="text-sm mt-3"></div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_about">關於我們</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_brand">品牌故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_team">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_contact">合作洽談</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_category">專欄分類</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Culture</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food & Drink</a></li>
+                        <li><a href="#" class="hover:text-white transition">Japan View</a></li>
+                        <li><a href="#" class="hover:text-white transition">Artisan Life</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                
+                <div class="order-3 sm:order-1 text-center sm:text-left text-gray-400 mt-6 sm:mt-0">
+                    <p>&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+                    <p class="mt-1" data-i18n="footer_issue_title">001期美好駁二</p>
+                </div>
+
+                <div class="order-2 text-center text-gray-400 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_terms">服務條款</a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_privacy">隱私權政策</a>
+                </div>
+
+                <div class="order-1 sm:order-3 flex justify-center space-x-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-line"></i></a> 
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

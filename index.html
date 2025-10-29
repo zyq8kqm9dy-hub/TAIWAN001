@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="hero_title">高雄的美好時光</title>
+    <!-- 載入 Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Font Awesome for social icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 設定 Inter 字體和背景顏色 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* 主圖疊加層的過渡效果 */
+        #hero-section .overlay-content {
+            opacity: 1; /* 確保內容可見 */
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        /* 語言按鈕選中狀態 */
+        .lang-active {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            border-color: #d1d5db; /* border-gray-300 */
+            font-weight: 600;
+        }
+        /* 16:9 容器的 Custom CSS */
+        .aspect-16-9 {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 9 / 16 * 100% */
+        }
+        .aspect-16-9 > * {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 翻譯資料物件 (Chinese Traditional -> English/Japanese)
+        const translations = {
+            "nav_slogan": { "zh": "喜歡台灣 也喜歡日本", "en": "Love Taiwan, Love Japan", "jp": "台湾が好き、日本も好き" },
+            "nav_zh": { "zh": "中文", "en": "Chinese", "jp": "中文" },
+            "nav_en": { "zh": "英文", "en": "English", "jp": "英語" },
+            "nav_jp": { "zh": "日文", "en": "Japanese", "jp": "日本語" },
+            "nav_subscribe": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" },
+            "hero_issue_type": { "zh": "ISSUE. 001 | 特別企劃", "en": "ISSUE. 001 | Special Feature", "jp": "ISSUE. 001 | 特別企画" },
+            "hero_title": { "zh": "高雄的美好時光", "en": "Kaohsiung's Wonderful Time", "jp": "高雄の素晴らしい時間" },
+            "hero_subtitle": { "zh": "高雄，從coolplay、blackpick、火星人的演唱會與奈良美智的藝術展，每週絡繹不絕文創市集，高雄的美好生活，正在翻轉著全球旅人的眼光。", "en": "From concerts by Coldplay, Blackpink, and Maroon 5, to the art exhibition by Yoshitomo Nara, and weekly cultural markets, the beautiful life in Kaohsiung is changing the perspective of countless Japanese travelers.", "jp": "Coldplay、Blackpink、Maroon 5のコンサートや奈良美智の展覧会、毎週賑わう文創マーケットなど、高雄の素晴らしい生活は、数多くの日本人旅行者の目を惹きつけ、その見方を変えつつあります。" },
+            "hero_button": { "zh": "瀏覽最新專題", "en": "View Latest Feature", "jp": "最新特集を見る" },
+            "main_section_title": { "zh": "本期精選專欄", "en": "Featured Columns", "jp": "今号の特集コラム" },
+            
+            "col1_title": { "zh": "駁二的美好重生：城市與海的聚落新生", "en": "The Wonderful Rebirth of Pier-2: A New Community of City and Sea", "jp": "駁二の華麗なる再生：都市と海の集落新生" },
+            "col1_body": { "zh": "舊倉庫，新靈魂。駁二從港口物資堆積地蛻變成南台灣最指標的藝術文創園區。無論是國際大展（如奈良美智特展），還是絡繹不絕的文創市集，這裡以海港粗獷美學為骨，當代設計活力為魂，是高雄面向世界的創意新聚落。", "en": "Old warehouses, new soul. Pier-2 has transformed from a port depot into Southern Taiwan's most iconic art and cultural park. Blending the rugged aesthetics of the harbor with the vitality of contemporary design, it stands as Kaohsiung's new creative hub, hosting international exhibitions and bustling cultural markets.", "jp": "古い倉庫に、新しい魂。駁二は港湾の物資置き場から、台湾南部で最も指標的なアート＆文化創造パークへと変貌。国際展覧会や賑やかな文創マーケットなど、ここは港湾の荒々しい美学を骨とし、現代デザインの活力を魂とする、高雄の新しいクリエイティブ集落です。" },
+            
+            "col2_title": { "zh": "到京都小住：京都的慢生活", "en": "A Short Stay in Kyoto: The Slow Life of Kyoto", "jp": "京都に短期滞在：京都のゆっくりとした生活" },
+            "col2_body": { "zh": "在京都，尋找深層次的精神療癒。我們帶您體驗「小住」的慢生活哲學：清晨漫步於寂靜禪院，在町家（Machiya）中沏茶。這份慢，是對工藝的珍視，對季節的敏感，更是對日常生活美學的堅持。", "en": "Seek deep spiritual healing in Kyoto. Experience the philosophy of 'slow living' during a short stay: walk through quiet Zen gardens in the morning, and brew tea in a traditional Machiya. This slowness embodies the appreciation of crafts, sensitivity to seasons, and the adherence to everyday aesthetics.", "jp": "京都で、深層的な精神の癒しを探しましょう。「小住」のゆっくりとした生活哲学を体験：静かな禅院を早朝に散策し、町家でお茶を淹れます。このゆっくりさは、工芸品の尊重、季節への敏感さ、そして日常生活の美学へのこだわりです。" },
+            
+            "col3_title": { "zh": "一杯入魂：高雄獨立咖啡誕生", "en": "One Cup, One Soul: The Birth of Kaohsiung's Independent Coffee Scene", "jp": "一杯入魂：高雄インディーズコーヒーの誕生" },
+            "col3_body": { "zh": "港都巷弄中的咖啡革命！高雄獨立咖啡師們結合了對咖啡的熱情與日式細膩工藝，創造出「一杯入魂」的獨特風味。從選豆到儀式感的沖煮，每一杯都是職人精神的體現，為這座城市點燃了溫暖的火光。", "en": "The coffee revolution in the harbor city's alleys! Kaohsiung's independent baristas blend passion for coffee with Japanese meticulous craftsmanship to create a unique 'one cup, one soul' flavor. From bean selection to ritualistic brewing, every cup embodies the artisan spirit, igniting a warm spark in the city.", "jp": "港町の路地裏でのコーヒー革命！高雄のインディーズコーヒー店主たちは、情熱と日本の繊細な職人技を融合させ、「一杯入魂」の独特な風味を創造。豆選びから儀式的な抽出まで、すべての一杯が職人精神の表れであり、この街に温かい光を灯しています。" },
+            
+            "col4_title": { "zh": "所看，所見，所作", "en": "What is Seen, What is Encountered, What is Made", "jp": "見たもの、出会ったもの、作ったもの" },
+            "col4_body": { "zh": "專方台いすき創意總監，遊走於台日文化間的觀察家與實踐者。他融合了日本的極簡主義與台灣的人情溫暖，透過選品和設計，展現出跨越國界的生活美學。學習如何以匠心對待日常，讓生活充滿靈感與質感。", "en": "The Tai-Isuki founder is an observer between Taiwanese and Japanese cultures. He blends Japanese minimalism with Taiwanese warmth, showcasing a cross-border aesthetic through his selections and designs. Learn how to treat daily life with an artisan's heart, filling it with inspiration and quality.", "jp": "台いすき創業者は、台日文化の間を旅する観察者であり実践者。日本のミニマリズムと台湾の人情の温かさを融合させ、選品とデザインを通じて国境を越えた生活美学を提示。日常を匠の心で扱い、インスピレーションと質感に満ちたものにする方法を探ります。" },
+            
+            "col5_title": { "zh": "裏原宿的再次新生", "en": "The Second Rebirth of Ura-Harajuku", "jp": "裏原宿の再度の新生" },
+            "col5_body": { "zh": "90年代東京街頭文化的心臟，裏原宿正迎來一場「再次新生」。本專欄深入分析新一代設計師如何進駐，並將永續設計、數位藝術與獨立精神融入潮流。裏原宿的蛻變，繼續為全球時尚界提供最前沿的靈感火花。", "en": "Ura-Harajuku, the heart of 90s Tokyo street culture, is undergoing a 'second rebirth.' This column analyzes how new designers are integrating sustainable design, digital art, and independent spirit into the trend, continuing to provide cutting-edge inspiration for the global fashion industry.", "jp": "90年代東京ストリートカルチャーの中心地、裏原宿が「再度の新生」を迎えています。本コラムでは、新世代デザイナーがどのように進出し、サステナブルデザイン、デジタルアート、インディペンデント精神をトレンドに融合させているかを分析。裏原宿の変革は、世界のファッション業界に最先端のインスピレーションを提供し続けています。" },
+            
+            "col6_title": { "zh": "台日職人選品", "en": "Taiwan-Japan Artisan Selections", "jp": "台日職人セレクション" },
+            "col6_body": { "zh": "嚴選日本職人藝術家橫山拓也最新創作，從日本美學感受生活「大好溫柔」的手感與溫度與肌理。台いすき每一件選品都承載著製作者對細節的堅持和對日常的愛意，讓您體驗溫暖而美好的生活氣息。", "en": "A curated selection of the latest creations from Taiwanese and Japanese artisans, focusing on objects that bring a 'wonderful warmth' to life. Each piece, from Japanese woodworking to Taiwanese pottery, embodies the creator's dedication to detail, allowing you to experience a warm and beautiful atmosphere of life.", "jp": "台日職人による最新の創作物を厳選し、「大いなる優しさ」を生活にもたらすアイテムに焦点を当てます。日本の伝統木工品から台湾の手作り陶芸まで、それぞれの選品は制作者のディテールへのこだわりと日常への愛情を込めており、温かく美しい生活の雰囲気を体験できます。" },
+            
+            "footer_issue_title": { "zh": "001期美好駁二", "en": "Issue 001: Beautiful Pier-2", "jp": "001号 美しい駁二" },
+            "footer_terms": { "zh": "服務條款", "en": "Terms of Service", "jp": "利用規約" },
+            "footer_privacy": { "zh": "隱私權政策", "en": "Privacy Policy", "jp": "プライバシーポリシー" },
+            "footer_about": { "zh": "關於我們", "en": "About Us", "jp": "会社概要" },
+            "footer_brand": { "zh": "品牌故事", "en": "Brand Story", "jp": "ブランドストーリー" },
+            "footer_team": { "zh": "編輯團隊", "en": "Editorial Team", "jp": "編集チーム" },
+            "footer_contact": { "zh": "合作洽談", "en": "Business Inquiries", "jp": "ビジネス提携" },
+            "footer_category": { "zh": "專欄分類", "en": "Categories", "jp": "コラム分類" },
+            "footer_newsletter_title": { "zh": "訂閱電子報", "en": "Subscribe to Newsletter", "jp": "ニュースレター購読" },
+            "footer_newsletter_desc": { "zh": "掌握最新台日潮流與深度報導，每週發送一次。", "en": "Stay updated with the latest Taiwan-Japan trends and in-depth reports, sent weekly.", "jp": "最新の台日トレンドと深掘りレポートを毎週お届けします。" },
+            "footer_email_placeholder": { "zh": "輸入您的 Email", "en": "Enter your Email", "jp": "メールアドレスを入力" },
+            "footer_subscribe_button": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" }
+        };
+
+        let currentLang = 'zh'; 
+
+        // 核心翻譯函式
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 處理所有 data-i18n 標籤
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    if (el.tagName === 'INPUT' && el.type === 'email') {
+                        // 處理輸入框的 placeholder
+                        el.placeholder = translations[key][lang];
+                    } else {
+                        // 處理一般文字內容
+                        el.textContent = translations[key][lang];
+                    }
+                }
+            });
+
+            // 處理導航按鈕的 active 狀態
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                btn.classList.remove('lang-active');
+                if (btnLang === lang) {
+                    btn.classList.add('lang-active');
+                }
+            });
+
+            // 更新 HTML lang 屬性 (可選，但對 SEO 和可訪問性有幫助)
+            document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'en' ? 'en' : 'zh-Hant');
+        }
+
+        // 設置事件監聽器
+        window.onload = function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
+            });
+
+            // 初始載入時設定為中文
+            setLanguage('zh'); 
+        };
+    </script>
+
+    <!-- 頂部導航/Logo 區塊 (全寬白色背景) -->
+    <nav class="bg-white shadow-sm w-full">
+        <!-- 導航內容，將 h-20 放大為 h-40 (兩倍高) -->
+        <div class="px-4 sm:px-6 lg:px-8 h-40 flex items-center justify-between">
+            
+            <!-- Logo 區 (flex-grow 讓它佔用更多空間) -->
+            <div class="flex items-center space-x-4 flex-grow">
+                <a href="#" class="flex items-end">
+                    <!-- 自定義 Logo 圖片，請替換 src 為您的 Logo 圖片連結 -->
+                    <img src="logonew.png" alt="台いすき Logo" class="h-40"> <!-- 調整 Logo 高度以適應 h-40 的導航欄 -->
+                </a>
+                <p class="hidden md:block text-gray-600 text-base font-medium" data-i18n="nav_slogan">喜歡台灣 也喜歡日本</p>
+            </div>
+            
+            <!-- 右側連結: 語言切換與訂閱 (保持緊湊) -->
+            <div class="flex items-center space-x-3 text-sm">
+                <!-- 語言切換按鈕，加上 data-lang 和 lang-btn 類 -->
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 border border-gray-300 rounded hover:bg-gray-100 transition" data-lang="zh" data-i18n="nav_zh">中文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="en" data-i18n="nav_en">English</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="jp" data-i18n="nav_jp">日本語</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition" data-i18n="nav_subscribe">訂閱</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主標題區塊 (Hero Image 樣式，使用 16:9 響應式比例) -->
+    <header id="hero-section" class="relative bg-cover bg-center aspect-16-9" 
+            style="background-image: url('heard.png');">
+        
+        <!-- 黑色疊加層 (Overlay) - 增加文字可讀性 -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center px-4">
+            
+            <!-- 限制主題文字區塊大小為 max-w-7xl -->
+            <div class="max-w-7xl w-full flex flex-col justify-center items-center text-center">
+                <div class="overlay-content"> 
+                    <p class="text-sm font-light uppercase tracking-widest text-white/80 mb-2" data-i18n="hero_issue_type">ISSUE. 001 | 特別企劃</p>
+                    
+                    <!-- 主標題文字大小縮小，更優雅 -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4" data-i18n="hero_title">
+                        高雄的美好時光
+                    </h1>
+                    
+                    <!-- 副標題文字大小縮小，更優雅 -->
+                    <p class="mt-2 mb-8 text-sm sm:text-lg font-light leading-relaxed max-w-3xl text-white/90" data-i18n="hero_subtitle">
+                        高雄，從coolplay、blackpick、火星人的演唱會與奈良美智的藝術展，每週絡繹不絕文創市集，高雄的美好生活，正在翻轉無數日本旅人的眼光。
+                    </p>
+                    
+                    <!-- 瀏覽最新專題 按鈕 -->
+                    <a href="#featured-columns" class="px-6 py-3 bg-white text-gray-900 font-medium tracking-wider rounded-lg shadow-xl hover:bg-gray-200 transition duration-300 uppercase text-sm" data-i18n="hero_button">
+                        瀏覽最新專題
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 內容專欄區塊 -->
+    <main id="featured-columns" class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-2 border-indigo-500 pb-2" data-i18n="main_section_title">本期精選專欄</h2>
+
+        <!-- 專欄內容網格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 專欄 1: CULTURE & LIFESTYLE -->
+            <a href="a_landing_page.html" class="block">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-full">
+                    <!-- 圖片佔位符 -->
+                    <img src="no.2.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/805ad5/ffffff?text=CULTURE+%26+LIFESTYLE'" alt="駁二藝術特區景觀圖" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-100 rounded-full mb-3">CULTURE & LIFESTYLE</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="col1_title">駁二的美好重生：城市與海的聚落新生</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="col1_body">
+                            舊倉庫，新靈魂。駁二從港口物資堆積地蛻變成南台灣最指標的藝術文創園區。無論是國際大展（如奈良美智特展），還是絡繹不絕的文創市集，這裡以海港粗獷美學為骨，當代設計活力為魂，是高雄面向世界的創意新聚落。
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 專欄 2: JAPAN NEW VIEW -->
+            <a href="b_landing_page.html" class="block">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-full">
+                    <!-- 圖片佔位符 -->
+                    <img src="kyoto.JPG" onerror="this.onerror=null; this.src='https://placehold.co/600x400/48bb78/ffffff?text=JAPAN+NEW+VIEW'" alt="京都傳統街景圖" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-green-700 bg-green-100 rounded-full mb-3">JAPAN NEW VIEW</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="col2_title">到京都小住：京都的慢生活</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="col2_body">
+                            在京都，尋找深層次的精神療癒。我們帶您體驗「小住」的慢生活哲學：清晨漫步於寂靜禪院，在町家（Machiya）中沏茶。這份慢，是對工藝的珍視，對季節的敏感，更是對日常生活美學的堅持。
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 專欄 3: FOOD & DRINK -->
+            <a href="c_landing_page.html" class="block">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-full">
+                    <!-- 圖片佔位符 -->
+                    <img src="coffee.JPG" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f6ad55/ffffff?text=FOOD+%26+DRINK'" alt="一杯香濃的咖啡圖" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-yellow-700 bg-yellow-100 rounded-full mb-3">FOOD & DRINK</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="col3_title">一杯入魂：高雄獨立咖啡誕生</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="col3_body">
+                            港都巷弄中的咖啡革命！高雄獨立咖啡師們結合了對咖啡的熱情與日式細膩工藝，創造出「一杯入魂」的獨特風味。從選豆到儀式感的沖煮，每一杯都是職人精神的體現，為這座城市點燃了溫暖的火光。
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 專欄 4: 職人生活 (Artisan Life) -->
+            <a href="d_landing_page.html" class="block">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-full">
+                    <!-- 圖片佔位符 -->
+                    <img src="03.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/a0aec0/ffffff?text=ARTISAN+LIFE'" alt="專方台いすき創辦人肖像圖" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gray-700 bg-gray-100 rounded-full mb-3">職人生活</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="col4_title">所看，所見，所作</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="col4_body">
+                            專方台いすき創辦人，遊走於台日文化間的觀察家與實踐者。他融合了日本的極簡主義與台灣的人情溫暖，透過選品和設計，展現出跨越國界的生活美學。學習如何以匠心對待日常，讓生活充滿靈感與質感。
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 專欄 5: 東京潮複習 (Tokyo Trend Review) -->
+            <a href="e_landing_page.html" class="block">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-full">
+                    <!-- 圖片佔位符 -->
+                    <img src="harajuku2.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f687b3/ffffff?text=TOKYO+TREND'" alt="裏原宿街頭時尚圖" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-pink-700 bg-pink-100 rounded-full mb-3">東京潮複習</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="col5_title">裏原宿的再次新生</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="col5_body">
+                            90年代東京街頭文化的心臟，裏原宿正迎來一場「再次新生」。本專欄深入分析新一代設計師如何進駐，並將永續設計、數位藝術與獨立精神融入潮流。裏原宿的蛻變，繼續為全球時尚界提供最前沿的靈感火花。
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 專欄 6: 本週新物點 (New Items This Week) -->
+            <a href="f_landing_page.html" class="block">
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden cursor-pointer h-full">
+                    <!-- 圖片佔位符 -->
+                    <img src="mono.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/38b2ac/ffffff?text=NEW+ITEMS'" alt="台日職人手作商品圖" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 bg-teal-100 rounded-full mb-3">本週新物點</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="col6_title">台日職人選品</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="col6_body">
+                            嚴選台日職人最新創作，專注於能讓生活感受「大好溫柔」的物件。從日本傳統木器到台灣手感陶藝，每一件選品都承載著製作者對細節的堅持和對日常的愛意，讓您體驗溫暖而美好的生活氣息。
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <!-- 專欄內容網格結束 -->
+    </main>
+
+    <!-- 頁尾 (靜態版本) -->
+    <footer class="bg-gray-800 text-white mt-16 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                <!-- 訂閱電子報 (佔據兩欄) -->
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_newsletter_title">訂閱電子報</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="footer_newsletter_desc">掌握最新台日潮流與深度報導，每週發送一次。</p>
+                    <!-- 靜態表單，移除 JS 處理 -->
+                    <form class="flex">
+                        <input type="email" data-i18n="footer_email_placeholder" placeholder="輸入您的 Email" class="p-3 w-full rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-r-lg font-medium transition" data-i18n="footer_subscribe_button">訂閱</button>
+                    </form>
+                    <!-- 移除 Firebase 訂閱成功的訊息顯示區 -->
+                </div>
+
+                <!-- 關於我們 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_about">關於我們</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_brand">品牌故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_team">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_contact">合作洽談</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 專欄分類 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_category">專欄分類</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Culture</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food & Drink</a></li>
+                        <li><a href="#" class="hover:text-white transition">Japan View</a></li>
+                        <li><a href="#" class="hover:text-white transition">Artisan Life</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 頁尾底部 (社交圖標與版權資訊) -->
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                
+                <!-- 版權資訊與期數修正 -->
+                <div class="order-3 sm:order-1 text-center sm:text-left text-gray-400 mt-6 sm:mt-0">
+                    <p>&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+                    <p class="mt-1" data-i18n="footer_issue_title">001期美好駁二</p>
+                </div>
+
+                <!-- 服務條款與隱私權政策 -->
+                <div class="order-2 text-center text-gray-400 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_terms">服務條款</a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_privacy">隱私權政策</a>
+                </div>
+
+                <!-- 社交媒體圖標 -->
+                <div class="order-1 sm:order-3 flex justify-center space-x-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-line"></i></a> 
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

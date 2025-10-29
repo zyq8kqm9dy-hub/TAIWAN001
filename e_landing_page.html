@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="col5_title">裏原宿的再次新生：東京潮複習</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 設定字體和風格 - 沿用專欄的設計 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* 內文使用襯線字體，增加閱讀質感 */
+        .article-content {
+            font-family: 'Noto Serif TC', serif;
+            line-height: 2.1;
+            color: #1f2937; 
+        }
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        /* 圖片樣式 */
+        .article-content img {
+            display: block;
+            margin: 2.5rem auto; 
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+        }
+        .lang-active {
+            background-color: #f3f4f6; 
+            border-color: #d1d5db; 
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        // 翻譯資料物件 (完整保留)
+        const translations = {
+            "nav_slogan": { "zh": "喜歡台灣 也喜歡日本", "en": "Love Taiwan, Love Japan", "jp": "台湾が好き、日本も好き" },
+            "nav_zh": { "zh": "中文", "en": "Chinese", "jp": "中文" },
+            "nav_en": { "zh": "英文", "en": "English", "jp": "英語" },
+            "nav_jp": { "zh": "日文", "en": "Japanese", "jp": "日本語" },
+            "nav_subscribe": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" },
+            "nav_back_home": { "zh": "回主頁", "en": "Home", "jp": "ホームへ" },
+            "nav_save": { "zh": "收藏", "en": "Save", "jp": "保存" },
+
+            "col5_category": { "zh": "東京潮複習", "en": "TOKYO TREND", "jp": "東京トレンド復習" },
+            "col5_issue_type": { "zh": "ISSUE. 001", "en": "ISSUE. 001", "jp": "ISSUE. 001" },
+            "col5_title": { "zh": "裏原宿的再次新生", "en": "The Second Rebirth of Ura-Harajuku", "jp": "裏原宿の再度の新生" },
+            "col5_subtitle": { "zh": "90年代東京街頭文化的心臟，裏原宿正迎來一場「再次新生」。本專題深入分析設計師如何將服飾、音樂、獨立精神融入潮流，持續創造日本的青年文化。", "en": "The heart of 90s Tokyo street culture, Ura-Harajuku, is undergoing a 'second rebirth.' This feature analyzes how designers integrate apparel, music, and independent spirit into the trend, continuously shaping Japanese youth culture.", "jp": "90年代東京ストリートカルチャーの中心地、裏原宿が「再度の新生」を迎えています。本特集では、デザイナーがいかに服飾、音楽、独立精神をトレンドに融合させ、日本の若者文化を創造し続けているかを分析します。" },
+            "col5_author": { "zh": "撰文 | Tokyo Insider", "en": "Writer | Tokyo Insider", "jp": "著者 | 東京インサイダー" },
+            "col5_date": { "zh": "2025.10.26", "en": "2025.10.26", "jp": "2025.10.26" },
+            
+            "sec1_title": { "zh": "90年代的黃金三角：文化雜貨屋的創世紀", "en": "The Golden Triangle of the 90s: Genesis of the Culture Shop", "jp": "90年代の黄金トライアングル：カルチャーショップの創世記" },
+            "sec1_p1": { "zh": "要理解裏原宿，必須回到 1990 年代初的黃金時代。當時，藤原浩（Hiroshi Fujiwara）、高橋盾（Jun Takahashi of Undercover）、NIGO（A Bathing Ape 創辦人）等核心人物，通過他們開設在貓街（Cat Street）或隱密巷弄中的「文化雜貨屋」，創造了一種全新的街頭文化。這些店鋪販售的不是昂貴的奢侈品，而是帶有強烈自我意識的 T 恤、限量球鞋和獨立音樂唱片。", "en": "To understand Ura-Harajuku, one must return to its golden age in the early 1990s. Core figures like Hiroshi Fujiwara, Jun Takahashi (Undercover), and NIGO (A Bathing Ape founder) pioneered a new street culture through their 'culture shops' hidden on Cat Street or in obscure alleys. These stores didn't sell luxury goods, but self-aware T-shirts, limited edition sneakers, and independent music records.", "jp": "裏原宿を理解するには、1990年代初頭の黄金時代に遡る必要があります。当時、藤原ヒロシ、高橋盾（Undercover）、NIGO（A Bathing Ape創設者）などの中心人物が、キャットストリートや隠れた路地裏に開いた「カルチャーショップ」を通じて、まったく新しいストリートカルチャーを創造しました。これらの店舗は高価な贅沢品ではなく、強い自己意識を持ったTシャツ、限定スニーカー、インディーズ音楽レコードを販売していました。" },
+            "sec1_p2": { "zh": "藤原浩被譽為「裏原宿教父」，他不僅是設計師，更是透過音樂和 DJ 身份，將龐克、嘻哈等地下文化帶入主流，定義了何謂「酷」。NIGO 的 BAPE 則以獨特的迷彩和猿人頭標誌，將裏原宿的限量、排隊文化推向高峰，讓服飾成為一種投資和身份的象徵。", "en": "Hiroshi Fujiwara, hailed as the 'Godfather of Ura-Harajuku,' wasn't just a designer; he used his music and DJ career to infuse underground cultures like punk and hip-hop into the mainstream, defining what 'cool' meant. NIGO's BAPE, with its unique camouflage and ape head logo, took Ura-Harajuku's limited-edition and queuing culture to its peak, making clothing a symbol of investment and identity.", "jp": "藤原ヒロシは「裏原宿のゴッドファーザー」と呼ばれ、デザイナーであるだけでなく、音楽やDJとしての活動を通じて、パンクやヒップホップなどのアンダーグラウンドカルチャーを主流に持ち込み、「クール」とは何かを定義しました。NIGOのBAPEは、独自のカモフラージュ柄とエイプヘッドのロゴで、裏原宿の限定品、行列文化を最高潮に導き、服飾を投資とアイデンティティの象徴としました。" },
+            
+            "sec2_title": { "zh": "從隱密到開放：新時代的複合美學", "en": "From Hidden to Open: The Composite Aesthetic of the New Era", "jp": "隠密から開放へ：新時代の複合美学" },
+            "sec2_p1": { "zh": "時至今日，雖然當年隱藏在巷弄中的「文化雜貨屋」模式已逐漸淡出，但裏原宿的精神並未消失，而是轉化為一種更具複合性、更強調體驗的「再次新生」。以 BEAMS 為例，它早已超越服飾店的定義，成為涵蓋時尚、家居、藝術、音樂的複合式文化提案者。", "en": "Today, although the 'culture shop' model hidden in the alleys has faded, the spirit of Ura-Harajuku has not disappeared. Instead, it has transformed into a 'second rebirth' that is more composite and focused on experience. BEAMS, for instance, has long transcended the definition of a clothing store, becoming a composite cultural proposer covering fashion, home goods, art, and music.", "jp": "今日、かつて路地裏に隠れていた「カルチャーショップ」のスタイルは薄れつつありますが、裏原宿の精神は消えていません。それは、より複合的で、体験を重視する「再度の新生」へと変化しました。BEAMSを例にとると、それはすでに単なる服飾店の定義を超越し、ファッション、ホームグッズ、アート、音楽を含む複合的な文化提案者となっています。" },
+            "sec2_p2": { "zh": "新的裏原宿，更像是一個巨型的選物店，例如，像「東京天國」（Tokyo Heaven）這樣融合了獨立音樂、藝術家聯名、和實驗性服裝的空間，展示了青年文化如何持續通過跨界合作來表達自我。這種開放的姿態，不再排斥主流，而是利用自身強大的文化編碼能力，持續影響著全球的潮流風向。", "en": "The new Ura-Harajuku feels more like a giant curated select shop. Spaces like 'Tokyo Heaven' (if referring to a concept that blends music, art collaborations, and experimental apparel) exemplify how youth culture continues to express itself through cross-disciplinary collaborations. This open approach no longer rejects the mainstream but uses its powerful cultural coding ability to continuously influence global trend direction.", "jp": "新しい裏原宿は、巨大なセレクトショップのようです。例えば、「東京天国」（服飾、音楽、アートコラボレーションを融合したコンセプト店）のような空間は、若者文化がどのように境界を超えたコラボレーションを通じて自己表現を続けているかを示しています。この開かれた姿勢は、もはや主流を排斥せず、独自の強力な文化コード能力を活用し、世界のトレンドを影響し続けています。" },
+            
+            "sec3_title": { "zh": "音樂與服飾：青年文化的兩種語言", "en": "Music and Apparel: The Two Languages of Youth Culture", "jp": "音楽と服飾：若者文化の二つの言語" },
+            "sec3_p1": { "zh": "裏原宿的靈魂始終是音樂。從藤原浩擔任 DJ 時將文化脈動帶入品牌，到現在許多獨立店鋪內部播放的實驗音樂、獨立樂團唱片，音樂始終是服飾設計背後的哲學支撐。青年們通過挑選 T 恤上的圖案和聆聽的音樂，來傳達他們對社會、對美學的態度。", "en": "Music remains the soul of Ura-Harajuku. From Fujiwara's role as a DJ injecting cultural pulse into brands, to the experimental music and indie records played inside many independent shops today, music is the philosophical backbone of apparel design. Youth convey their stance on society and aesthetics through the graphics on their T-shirts and the music they listen to.", "jp": "裏原宿の魂は常に音楽です。藤原ヒロシがDJとして文化の脈動をブランドに持ち込んだことから始まり、現在多くのインディーズ店内で流れる実験音楽やインディーズバンドのレコードまで、音楽は服飾デザインの背後にある哲学的な支柱です。若者たちは、Tシャツのグラフィックと聴く音楽を通じて、社会や美学に対する姿勢を伝えます。" },
+            "sec3_p2": { "zh": "這場「潮複習」不僅是追溯歷史，更是見證一種文化主權的實踐。裏原宿的設計師們用身體力行，證明了本土文化可以成為全球潮流的定義者。無論是當年的 BAPE 還是今日的複合式選物店，裏原宿的基因——**反叛、限量、獨立、協作**——依然是東京青年文化最鮮明的標誌。", "en": "This 'trend review' is not just about revisiting history; it's witnessing the practice of cultural sovereignty. Ura-Harajuku designers demonstrate through action that local culture can become a global trendsetter. Whether it was BAPE then or the composite select shops now, Ura-Harajuku's DNA—**rebellion, exclusivity, independence, and collaboration**—remains the most distinctive marker of Tokyo youth culture.", "jp": "この「トレンド復習」は、歴史を辿るだけでなく、文化主権の実践を目の当たりにすることです。裏原宿のデザイナーたちは、行動を通じて、ローカル文化が世界のトレンドを定義する主体になり得ることを証明しています。当時のBAPEであれ、今日の複合型セレクトショップであれ、裏原宿の遺伝子、すなわち**反抗、限定、独立、コラボレーション**は、東京の若者文化の最も鮮明な象徴であり続けています。" },
+            
+            "share_title": { "zh": "分享這份美好", "en": "Share the Beauty", "jp": "この美しさをシェア" },
+
+            "footer_issue_title": { "zh": "001期美好駁二", "en": "Issue 001: Beautiful Pier-2", "jp": "001号 美しい駁二" },
+            "footer_terms": { "zh": "服務條款", "en": "Terms of Service", "jp": "利用規約" },
+            "footer_privacy": { "zh": "隱私權政策", "en": "Privacy Policy", "jp": "プライバシーポリシー" },
+            "footer_about": { "zh": "關於我們", "en": "About Us", "jp": "会社概要" },
+            "footer_brand": { "zh": "品牌故事", "en": "Brand Story", "jp": "ブランドストーリー" },
+            "footer_team": { "zh": "編輯團隊", "en": "Editorial Team", "jp": "編集チーム" },
+            "footer_contact": { "zh": "合作洽談", "en": "Business Inquiries", "jp": "ビジネス提携" },
+            "footer_category": { "zh": "專欄分類", "en": "Categories", "jp": "コラム分類" },
+            "footer_newsletter_title": { "zh": "訂閱電子報", "en": "Subscribe to Newsletter", "jp": "ニュースレター購読" },
+            "footer_newsletter_desc": { "zh": "掌握最新台日潮流與深度報導，每週發送一次。", "en": "Stay updated with the latest Taiwan-Japan trends and in-depth reports, sent weekly.", "jp": "最新の台日トレンドと深掘りレポートを毎週お届けします。" },
+            "footer_email_placeholder": { "zh": "輸入您的 Email", "en": "Enter your Email", "jp": "メールアドレスを入力" },
+            "footer_subscribe_button": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" }
+        };
+
+        let currentLang = 'zh'; 
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    if (el.tagName === 'INPUT' && el.type === 'email') {
+                        el.placeholder = translations[key][lang];
+                    } else {
+                        el.textContent = translations[key][lang];
+                    }
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                btn.classList.remove('lang-active');
+                if (btnLang === lang) {
+                    btn.classList.add('lang-active');
+                }
+            });
+            document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'en' ? 'en' : 'zh-Hant');
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
+            });
+            setLanguage('zh'); 
+            
+            // 訂閱表單處理 (模擬)
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('email-input').value.trim();
+                    const messageDiv = document.getElementById('subscription-message');
+                    
+                    if (!email || !email.includes('@')) {
+                        messageDiv.textContent = '請檢查 Email 格式。';
+                        messageDiv.className = 'text-sm mt-3 text-red-500';
+                        return;
+                    }
+                    
+                    messageDiv.textContent = '處理中...';
+                    messageDiv.className = 'text-sm mt-3 text-yellow-500';
+
+                    // 這裡應有實際的 fetch 邏輯，目前為模擬
+                    setTimeout(() => {
+                        messageDiv.textContent = '✅ 訂閱成功！';
+                        messageDiv.className = 'text-sm mt-3 text-green-500';
+                        document.getElementById('email-input').value = '';
+                    }, 1500);
+                });
+            }
+        };
+    </script>
+
+    
+    <!-- 導航列 (刊頭) -->
+    <nav class="bg-white shadow-md w-full sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-40 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-4 flex-grow">
+                <a href="index.html" class="flex items-end">
+                    <!-- 您的 Logo 圖片佔位符 -->
+                    <img src="logonew.png" alt="台いすき Logo" class="h-40">
+                </a>
+                <p class="hidden md:block text-gray-600 text-base font-medium" data-i18n="nav_slogan">喜歡台灣 也喜歡日本</p>
+            </div>
+            
+            <div class="flex items-center space-x-3 text-sm">
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 border border-gray-300 rounded hover:bg-gray-100 transition" data-lang="zh" data-i18n="nav_zh">中文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="en" data-i18n="nav_en">英文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="jp" data-i18n="nav_jp">日文</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition" data-i18n="nav_subscribe">訂閱</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 專欄內容主區塊 -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- 頂部資訊與標題 -->
+        <header class="text-center mb-12">
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-pink-700 bg-pink-100 rounded-full mb-4" data-i18n="col5_issue_type">
+                ISSUE. 001
+            </span>
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-pink-700 bg-pink-100 rounded-full mb-4" data-i18n="col5_category">
+                東京潮複習
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 font-serif" data-i18n="col5_title">
+                裏原宿的再次新生
+            </h1>
+            <p class="text-lg text-gray-500 italic max-w-2xl mx-auto mb-6" data-i18n="col5_subtitle">
+                90年代東京街頭文化的心臟，裏原宿正迎來一場「再次新生」。本專題深入分析設計師如何將服飾、音樂、獨立精神融入潮流，持續創造日本的青年文化。
+            </p>
+            <div class="flex justify-center items-center mt-3 text-gray-600 text-sm">
+                <span class="mr-4" data-i18n="col5_author">撰文 | Tokyo Insider</span>
+                <span><i class="far fa-clock mr-1"></i> <span data-i18n="col5_date">2025.10.26</span></span>
+            </div>
+        </header>
+
+        <!-- 主視覺圖 - 潮流概念 -->
+        <figure class="mb-12">
+            <img src="harajuku2.png" alt="裏原宿街頭文化潮流概念圖" class="w-full rounded-xl">
+        </figure>
+
+        <!-- 文章內容 -->
+        <article class="article-content max-w-none prose lg:prose-lg mx-auto">
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec1_title">
+                90年代的黃金三角：文化雜貨屋的創世紀
+            </h2>
+            
+            <p data-i18n="sec1_p1">
+                要理解裏原宿，必須回到 1990 年代初的黃金時代。當時，藤原浩（Hiroshi Fujiwara）、高橋盾（Jun Takahashi of Undercover）、NIGO（A Bathing Ape 創辦人）等核心人物，通過他們開設在貓街（Cat Street）或隱密巷弄中的「文化雜貨屋」，創造了一種全新的街頭文化。這些店鋪販售的不是昂貴的奢侈品，而是帶有強烈自我意識的 T 恤、限量球鞋和獨立音樂唱片。
+            </p>
+            
+            <figure>
+                <img src="e02.png" alt="藤原浩、高橋盾、NIGO等裏原宿創始人" loading="lazy">
+                <figcaption class="text-center mt-3 text-sm text-gray-500">
+                    藤原浩等人在 90 年代通過獨立文化雜貨屋，奠定了裏原宿的街頭教父地位。
+                </figcaption>
+            </figure>
+            
+            <p data-i18n="sec1_p2">
+                藤原浩被譽為「裏原宿教父」，他不僅是設計師，更是透過音樂和 DJ 身份，將龐克、嘻哈等地下文化帶入主流，定義了何謂「酷」。NIGO 的 BAPE 則以獨特的迷彩和猿人頭標誌，將裏原宿的限量、排隊文化推向高峰，讓服飾成為一種投資和身份的象徵。
+            </p>
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec2_title">
+                從隱密到開放：新時代的複合美學
+            </h2>
+            
+            <p data-i18n="sec2_p1">
+                時至今日，雖然當年隱藏在巷弄中的「文化雜貨屋」模式已逐漸淡出，但裏原宿的精神並未消失，而是轉化為一種更具複合性、更強調體驗的「再次新生」。以 BEAMS 為例，它早已超越服飾店的定義，成為涵蓋時尚、家居、藝術、音樂的複合式文化提案者。
+            </p>
+            <figure>
+                <img src="e04.png" alt="BEAMS複合式選物店" loading="lazy">
+                <figcaption class="text-center mt-3 text-sm text-gray-500">
+                    新裏原宿的代表，BEAMS 不僅是服飾店，更是涵蓋生活、藝術的複合式文化中心。
+                </figcaption>
+            </figure>
+            
+            <p data-i18n="sec2_p2">
+                新的裏原宿，更像是一個巨型的選物店，例如，像「東京天國」（Tokyo Heaven）這樣融合了獨立音樂、藝術家聯名、和實驗性服裝的空間，展示了青年文化如何持續通過跨界合作來表達自我。這種開放的姿態，不再排斥主流，而是利用自身強大的文化編碼能力，持續影響著全球的潮流風向。
+            </p>
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec3_title">
+                音樂與服飾：青年文化的兩種語言
+            </h2>
+            
+            <p data-i18n="sec3_p1">
+                裏原宿的靈魂始終是音樂。從藤原浩擔任 DJ 時將文化脈動帶入品牌，到現在許多獨立店鋪內部播放的實驗音樂、獨立樂團唱片，音樂始終是服飾設計背後的哲學支撐。青年們通過挑選 T 恤上的圖案和聆聽的音樂，來傳達他們對社會、對美學的態度。
+            </p>
+            <figure>
+                <img src="e05.png" alt="裏原宿獨立音樂唱片與 T 恤" loading="lazy">
+                <figcaption class="text-center mt-3 text-sm text-gray-500">
+                    服飾與音樂是裏原宿青年文化表達獨立精神的兩大載體。
+                </figcaption>
+            </figure>
+            
+            <p data-i18n="sec3_p2">
+                這場「潮複習」不僅是追溯歷史，更是見證一種文化主權的實踐。裏原宿的設計師們用身體力行，證明了本土文化可以成為全球潮流的定義者。無論是當年的 BAPE 還是今日的複合式選物店，裏原宿的基因——**反叛、限量、獨立、協作**——依然是東京青年文化最鮮明的標誌。
+            </p>
+            
+        </article>
+        
+        <!-- 簡潔文章底部分享區塊 -->
+        <footer class="mt-12 pt-4 border-t border-gray-200 text-center py-6">
+            <h3 class="text-xl font-bold text-gray-700 mb-4" data-i18n="share_title">分享這份美好</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-line"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="far fa-envelope"></i></a>
+            </div>
+        </footer>
+
+    </main>
+    
+    <!-- 完整頁尾區塊 -->
+    <footer class="bg-gray-800 text-white mt-16 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_newsletter_title">訂閱電子報</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="footer_newsletter_desc">掌握最新台日潮流與深度報導，每週發送一次。</p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row relative">
+                        <!-- 訂閱表單 placeholder -->
+                        <input id="email-input" type="email" data-i18n="footer_email_placeholder" placeholder="輸入您的 Email" class="p-3 w-full rounded-t-lg sm:rounded-l-lg sm:rounded-t-none text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-b-lg sm:rounded-r-lg sm:rounded-b-none font-medium transition" data-i18n="footer_subscribe_button">訂閱</button>
+                    </form>
+                    <div id="subscription-message" class="text-sm mt-3"></div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_about">關於我們</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_brand">品牌故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_team">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_contact">合作洽談</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_category">專欄分類</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Culture</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food & Drink</a></li>
+                        <li><a href="#" class="hover:text-white transition">Japan View</a></li>
+                        <li><a href="#" class="hover:text-white transition">Artisan Life</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                
+                <div class="order-3 sm:order-1 text-center sm:text-left text-gray-400 mt-6 sm:mt-0">
+                    <p>&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+                    <p class="mt-1" data-i18n="footer_issue_title">001期美好駁二</p>
+                </div>
+
+                <div class="order-2 text-center text-gray-400 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_terms">服務條款</a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_privacy">隱私權政策</a>
+                </div>
+
+                <div class="order-1 sm:order-3 flex justify-center space-x-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-line"></i></a> 
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

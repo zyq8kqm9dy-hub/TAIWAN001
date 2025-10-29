@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一杯入魂：高雄獨立咖啡誕生</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 設定字體和風格 - 沿用專欄 1 的設計 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .article-content {
+            font-family: 'Noto Serif TC', serif;
+            line-height: 2.1;
+            color: #1f2937; /* text-gray-800 */
+        }
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        /* 圖片樣式 */
+        .article-content img {
+            display: block;
+            margin: 2.5rem auto; 
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+        }
+        .pull-quote {
+            border-left: 4px solid #F6AD55; /* 黃色作為 FOOD & DRINK 的主題色 */
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.125rem;
+            color: #4b5563; 
+        }
+        .lang-active {
+            background-color: #f3f4f6; 
+            border-color: #d1d5db; 
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 翻譯資料物件
+        const translations = {
+            "nav_slogan": { "zh": "喜歡台灣 也喜歡日本", "en": "Love Taiwan, Love Japan", "jp": "台湾が好き、日本も好き" },
+            "nav_zh": { "zh": "中文", "en": "Chinese", "jp": "中文" },
+            "nav_en": { "zh": "英文", "en": "English", "jp": "英語" },
+            "nav_jp": { "zh": "日文", "en": "Japanese", "jp": "日本語" },
+            "nav_subscribe": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" },
+            "nav_back_home": { "zh": "回主頁", "en": "Home", "jp": "ホームへ" },
+            "nav_save": { "zh": "收藏", "en": "Save", "jp": "保存" },
+
+            "col3_category": { "zh": "FOOD & DRINK", "en": "FOOD & DRINK", "jp": "食と飲み物" },
+            "col3_issue_type": { "zh": "ISSUE. 001", "en": "ISSUE. 001", "jp": "ISSUE. 001" },
+            "col3_title": { "zh": "一杯入魂：高雄獨立咖啡誕生", "en": "One Cup, One Soul: The Birth of Kaohsiung's Independent Coffee Scene", "jp": "一杯入魂：高雄インディーズコーヒーの誕生" },
+            "col3_subtitle": { "zh": "港都巷弄中的咖啡革命！高雄獨立咖啡師們結合了對咖啡的熱情與日式細膩工藝，創造出「一杯入魂」的獨特風味。從選豆到儀式感的沖煮，每一杯都是職人精神的體現。", "en": "The coffee revolution in the harbor city's alleys! Kaohsiung's independent baristas blend passion for coffee with Japanese meticulous craftsmanship to create a unique 'one cup, one soul' flavor. From bean selection to ritualistic brewing, every cup embodies the artisan spirit.", "jp": "港町の路地裏でのコーヒー革命！高雄のインディーズコーヒー師たちは、情熱と日本の繊細な工芸を融合させ、「一杯入魂」の独特な風味を創造。豆選びから儀式的な抽出まで、すべての一杯が職人精神の体現です。" },
+            "col3_author": { "zh": "撰文 | Coffee Geek", "en": "Writer | Coffee Geek", "jp": "著者 | Coffee Geek" },
+            "col3_date": { "zh": "2025.10.26", "en": "2025.10.26", "jp": "2025.10.26" },
+            
+            "sec1_title": { "zh": "從自家烘豆開始：真心豆行的謙卑苦行", "en": "Starting with Home Roasting: The Humble Practice of Jenshin Coffee", "jp": "自家焙煎から：真心豆行の謙虚な修行" },
+            "sec1_p1": { "zh": "高雄的精品咖啡浪潮，多半從自家烘豆師的堅持開始。「真心豆行」（Jenshin Coffee）便是這股精神的代表。創辦人小吳哥在業界有深厚基礎，最終選擇專注於烘焙技術的鑽研。真心豆行秉持著嚴選精品生豆的原則，致力於提供最健康、最原始的咖啡風味。", "en": "Kaohsiung's specialty coffee wave largely originates from the insistence of home roasters. Jenshin Coffee represents this spirit. The founder, Mr. Wu, with a solid foundation in the industry, ultimately chose to focus on the deep study of roasting techniques. Jenshin upholds the principle of rigorously selecting specialty green beans, dedicated to delivering the healthiest and most authentic coffee flavor.", "jp": "高雄のスペシャリティコーヒーの波は、主に自家焙煎士のこだわりから始まります。「真心豆行」（Jenshin Coffee）はその精神の代表です。創業者の呉氏は業界で深い基盤を持ちながら、最終的に焙煎技術の探求に専念することを選びました。真心豆行は、厳選されたスペシャリティ生豆の原則を堅持し、最も健康的で最もオリジナルなコーヒー風味を提供することに尽力しています。" },
+            "sec1_p2": { "zh": "在真心的品項中，常見到如「衣索比亞橘光舞妓蜜處理」這樣的淺焙精品豆。其風味細膩，猶如古典樂般晶瑩剔透，帶有優雅的熟果與花香，甜感圓潤且不酸澀，這也是其廣受在地咖啡愛好者喜愛的原因。他們在高雄的多個據點，將清新的白色歐風設計吹入街角，價格親民，成為實踐日常咖啡美學的理想選擇。", "en": "Among Jenshin's offerings, specialty light roasts like 'Ethiopia Orange Geisha Honey Process' are common. Its flavor is delicate, clear like classical music, with elegant ripe fruit and floral notes, and a round sweetness without excessive acidity, which is why it is widely loved by local coffee enthusiasts. Their multiple locations in Kaohsiung bring a fresh, white European style to the street corners. With approachable pricing, they are an ideal choice for practicing daily coffee aesthetics.", "jp": "真心豆行のラインナップには、「エチオピア オレンジゲイシャ ハニープロセス」のような浅煎りのスペシャリティ豆がよく見られます。その風味は繊細で、クラシック音楽のように透き通っており、エレガントな熟した果実と花の香りを持ち、酸味がなく丸い甘さが特徴で、これが地元のコーヒー愛好家に広く愛される理由です。彼らの高雄にある複数の拠点は、クリーンな白い欧風デザインを街角にもたらし、価格も手頃で、日常のコーヒー美学を実践するための理想的な選択肢となっています。" },
+            
+            "sec2_title": { "zh": "冠軍的溫度：賴昱權與喔咖啡的共感信念", "en": "The Champion's Warmth: Jacky Lai and OH! Café's Empathy", "jp": "チャンピオンの温もり：頼昱権氏とオーカフェの共感の信念" },
+            "sec2_p1": { "zh": "談及高雄咖啡，不能不提世界咖啡烘焙大賽冠軍賴昱權（Jacky Lai）創立的「喔咖啡」（OH! Café）。Jacky 不僅是技術上的頂尖職人，更透過咖啡傳遞一種「與人共感」的溫柔信念。他認為，一杯咖啡的精粹，在於它帶給人的情感和溫情。", "en": "Speaking of Kaohsiung coffee, one must mention OH! Café, founded by World Coffee Roasting Champion, Jacky Lai. Jacky is not just a top artisan in technique, but he conveys a gentle belief in 'empathy with people' through coffee. He believes the essence of a cup of coffee lies in the emotion and warmth it brings to a person.", "jp": "高雄のコーヒーについて語る際、世界コーヒー焙煎大会チャンピオンである頼昱権氏（Jacky Lai）が設立した「オーカフェ」（OH! Café）は欠かせません。Jacky氏は技術的なトップ職人であるだけでなく、コーヒーを通じて「人との共感」という優しい信念を伝えています。彼にとって、一杯のコーヒーの精髄は、それが人に与える感情と温かさにあるのです。" },
+            "sec2_p2": { "zh": "喔咖啡的空間設計常揉合日式懷舊風格與人文溫度。Jacky 曾研發一款名為「Dear J.」的咖啡，以核果甜度為主，後段帶出熟梅果味，微酸卻糅和著甜味。這款咖啡背後的故事，體現了咖啡師如何將風味設計與生活中的情感故事相結合，讓技術與溫度並存，將咖啡提升到藝術的層次。", "en": "OH! Café's space design often blends Japanese nostalgic style with humanistic warmth. Jacky once developed a coffee called 'Dear J.,' featuring a nutty sweetness with a hint of ripe plum fruit in the aftertaste—slightly acidic yet blended with sweetness. The story behind this coffee exemplifies how a barista combines flavor design with emotional life stories, allowing technique and warmth to coexist, elevating coffee to the level of art.", "jp": "オーカフェの空間デザインは、日本の懐かしいスタイルと人間的な温かさを融合させています。Jacky氏はかつて「Dear J.」という名のコーヒーを開発しました。これはナッツ系の甘さを主軸とし、後味に熟した梅の果実味を帯び、わずかな酸味と甘さが混ざり合っています。このコーヒーの背後にある物語は、コーヒー職人がどのように風味のデザインと生活の中の感情的な物語を結びつけ、技術と温もりを両立させ、コーヒーを芸術のレベルに高めているかを示しています。" },
+
+            "sec3_title": { "zh": "深夜的昭和浪漫：二木咖啡夜間部與銀座聚場", "en": "Late-Night Showa Romance: Futagi Coffee Night & House of Takao Ginza", "jp": "深夜の昭和ロマンス：二木コーヒー夜間部と銀座聚場" },
+            "sec3_p1": { "zh": "高雄的咖啡文化不僅限於白天，其深夜咖啡館同樣充滿了獨特魅力。例如「二木咖啡夜間部」（Futagi Coffee Roaster Night），它將老宅改裝成充滿日式昭和懷舊風格的空間，以木質裝潢、老物件、和昏黃的燈光，為夜貓子提供了一個安靜、放鬆、且充滿復古情懷的「深夜食堂」。", "en": "Kaohsiung's coffee culture isn't limited to the daytime; its late-night cafes are equally charming. Futagi Coffee Roaster Night transforms an old house into a space brimming with Japanese Showa-era nostalgia, using wooden decor, vintage items, and dim lighting to provide night owls with a quiet, relaxing 'late-night diner' full of retro sentiment.", "jp": "高雄のコーヒー文化は昼間に限らず、深夜のカフェも独自の魅力に満ちています。例えば「二木コーヒー夜間部」（Futagi Coffee Roaster Night）は、古い家屋を日本の昭和の懐かしい雰囲気で満たされた空間に改装し、木製の内装、古いアイテム、薄暗い照明で、夜型の客に静かでリラックスできる、レトロな雰囲気の「深夜食堂」を提供しています。" },
+            "sec3_p2": { "zh": "另一間在鹽埕區的「銀座聚場」（House of Takao Ginza），更是將老鹽埕的歷史特色應用到一棟 70 年老屋內。它藏身於高雄第一條百貨街——日治時期的「高雄銀座」商場巷弄中，空間中保留了磨石子地板、澡堂意象的凹陷吧檯，甚至提供獨特的「銀座特調」（加入鹽埕在地冬瓜糖的特調咖啡），讓咖啡不只是飲品，更是承載時光記憶的載體。", "en": "Another venue in the Yancheng district, the 'House of Takao Ginza,' applies the historical characteristics of old Yancheng to a 70-year-old house. Hidden in an alley of Kaohsiung's first department store street—the Japanese-era 'Takao Ginza' arcade—the space preserves terrazzo floors, a bathhouse-inspired recessed counter, and even offers the unique 'Ginza Special' (coffee blended with local winter melon sugar), making coffee not just a beverage but a vessel carrying the memory of time.", "jp": "塩埕区にあるもう一つの店「銀座聚場」（House of Takao Ginza）は、築70年の古い建物に古い塩埕の歴史的な特徴を取り入れています。ここは、日本統治時代の高雄初の百貨店街「高雄銀座」の裏路地に隠されており、空間には研ぎ出し床、浴場をイメージした凹んだカウンター、そして地元の冬瓜糖を加えたユニークな「銀座特調」が提供され、コーヒーを単なる飲み物ではなく、時間の記憶を運ぶ媒体としています。" },
+            
+            "sec4_title": { "zh": "從一杯咖啡，讀懂高雄的城市溫度", "en": "Reading Kaohsiung's Urban Warmth Through a Cup of Coffee", "jp": "一杯のコーヒーから、高雄の都市の温もりを読み解く" },
+            "sec4_p1": { "zh": "這些獨立咖啡館，共同構成了高雄咖啡文化多元的樣貌。它們不追求大規模連鎖複製，而是堅持在自家烘焙、手工沖煮、以及獨特的空間氛圍上深耕細作。這正是高雄「職人精神」的體現：不急不躁，實在且有溫度。無論是精品咖啡的純粹，還是老屋特調的懷舊，高雄的咖啡師們正用一杯杯「入魂」的飲品，點亮港都的巷弄與夜晚。", "en": "These independent cafes collectively form the diverse landscape of Kaohsiung's coffee culture. They don't pursue large-scale chain replication, but insist on deep cultivation in home roasting, manual brewing, and unique spatial ambiance. This is the embodiment of Kaohsiung's 'artisan spirit': steady, honest, and warm. Whether it's the purity of specialty coffee or the nostalgia of old-house blends, Kaohsiung's baristas are lighting up the harbor city's alleys and nights with 'one cup, one soul' beverages.", "jp": "これらの独立系カフェは、高雄のコーヒー文化の多様な姿を共同で形成しています。彼らは大規模なチェーン展開を追求せず、自家焙煎、手作業での抽出、そして独自の空間の雰囲気づくりに深くこだわる姿勢を貫いています。これこそが高雄の「職人精神」の現れであり、焦らず、実直で、温かいのです。スペシャリティコーヒーの純粋さであれ、古民家ブレンドのノスタルジアであれ、高雄のバリスタたちは「一杯入魂」の飲み物で、港町の路地裏と夜を照らしています。" },
+            
+            "share_title": { "zh": "分享這份美好", "en": "Share the Beauty", "jp": "この美しさをシェア" },
+
+            "footer_issue_title": { "zh": "001期美好駁二", "en": "Issue 001: Beautiful Pier-2", "jp": "001号 美しい駁二" },
+            "footer_terms": { "zh": "服務條款", "en": "Terms of Service", "jp": "利用規約" },
+            "footer_privacy": { "zh": "隱私權政策", "en": "Privacy Policy", "jp": "プライバシーポリシー" },
+            "footer_about": { "zh": "關於我們", "en": "About Us", "jp": "会社概要" },
+            "footer_brand": { "zh": "品牌故事", "en": "Brand Story", "jp": "ブランドストーリー" },
+            "footer_team": { "zh": "編輯團隊", "en": "Editorial Team", "jp": "編集チーム" },
+            "footer_contact": { "zh": "合作洽談", "en": "Business Inquiries", "jp": "ビジネス提携" },
+            "footer_category": { "zh": "專欄分類", "en": "Categories", "jp": "コラム分類" },
+            "footer_newsletter_title": { "zh": "訂閱電子報", "en": "Subscribe to Newsletter", "jp": "ニュースレター購読" },
+            "footer_newsletter_desc": { "zh": "掌握最新台日潮流與深度報導，每週發送一次。", "en": "Stay updated with the latest Taiwan-Japan trends and in-depth reports, sent weekly.", "jp": "最新の台日トレンドと深掘りレポートを毎週お届けします。" },
+            "footer_email_placeholder": { "zh": "輸入您的 Email", "en": "Enter your Email", "jp": "メールアドレスを入力" },
+            "footer_subscribe_button": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" }
+        };
+
+        let currentLang = 'zh'; 
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    if (el.tagName === 'INPUT' && el.type === 'email') {
+                        el.placeholder = translations[key][lang];
+                    } else {
+                        el.textContent = translations[key][lang];
+                    }
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                btn.classList.remove('lang-active');
+                if (btnLang === lang) {
+                    btn.classList.add('lang-active');
+                }
+            });
+            document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'en' ? 'en' : 'zh-Hant');
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
+            });
+            setLanguage('zh'); 
+            
+            // 訂閱表單處理 (Apps Script) - 需要替換 URL
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                // 假設您的 Apps Script URL 部署在這裡
+                const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec'; 
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('email-input').value.trim();
+                    const messageDiv = document.getElementById('subscription-message');
+                    
+                    if (!email || !email.includes('@')) {
+                        messageDiv.textContent = translations['msg_error'][currentLang] || '❌ 訂閱失敗，請檢查 Email 格式。';
+                        messageDiv.className = 'text-sm mt-3 text-red-500';
+                        return;
+                    }
+                    
+                    messageDiv.textContent = translations['msg_loading'][currentLang] || '處理中...';
+                    messageDiv.className = 'text-sm mt-3 text-yellow-500';
+
+                    // 模擬發送 POST 請求到 Apps Script URL
+                    fetch(GAS_WEB_APP_URL, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email })
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.status === 'success') {
+                            messageDiv.textContent = translations['msg_success'][currentLang] || '✅ 訂閱成功！感謝您的支持。';
+                            messageDiv.className = 'text-sm mt-3 text-green-500';
+                            document.getElementById('email-input').value = '';
+                        } else {
+                            messageDiv.textContent = translations['msg_error'][currentLang] || '❌ 訂閱失敗。';
+                            messageDiv.className = 'text-sm mt-3 text-red-500';
+                        }
+                    })
+                    .catch(() => {
+                        messageDiv.textContent = translations['msg_error'][currentLang] || '❌ 連線錯誤，請稍後再試。';
+                        messageDiv.className = 'text-sm mt-3 text-red-500';
+                    });
+                });
+            }
+        };
+    </script>
+
+    
+    <!-- 導航列 (刊頭) -->
+    <nav class="bg-white shadow-md w-full sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-40 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-4 flex-grow">
+                <a href="index.html" class="flex items-end">
+                    <!-- 您的 Logo 圖片佔位符 -->
+                    <img src="logonew.png" alt="台いすき Logo" class="h-40">
+                </a>
+                <p class="hidden md:block text-gray-600 text-base font-medium" data-i18n="nav_slogan">喜歡台灣 也喜歡日本</p>
+            </div>
+            
+            <div class="flex items-center space-x-3 text-sm">
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 border border-gray-300 rounded hover:bg-gray-100 transition" data-lang="zh" data-i18n="nav_zh">中文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="en" data-i18n="nav_en">英文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="jp" data-i18n="nav_jp">日文</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition" data-i18n="nav_subscribe">訂閱</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 專欄內容主區塊 -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- 頂部資訊與標題 -->
+        <header class="text-center mb-12">
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-yellow-700 bg-yellow-100 rounded-full mb-4" data-i18n="col3_issue_type">
+                ISSUE. 001
+            </span>
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-yellow-700 bg-yellow-100 rounded-full mb-4" data-i18n="col3_category">
+                FOOD & DRINK
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 font-serif" data-i18n="col3_title">
+                一杯入魂：高雄獨立咖啡誕生
+            </h1>
+            <p class="text-lg text-gray-500 italic max-w-2xl mx-auto mb-6" data-i18n="col3_subtitle">
+                港都巷弄中的咖啡革命！高雄獨立咖啡師們結合了對咖啡的熱情與日式細膩工藝，創造出「一杯入魂」的獨特風味。從選豆到儀式感的沖煮，每一杯都是職人精神的體現。
+            </p>
+            <div class="flex justify-center items-center mt-3 text-gray-600 text-sm">
+                <span class="mr-4" data-i18n="col3_author">撰文 | Coffee Geek</span>
+                <span><i class="far fa-clock mr-1"></i> <span data-i18n="col3_date">2025.10.26</span></span>
+            </div>
+        </header>
+
+        <!-- 主視覺圖 -->
+        <figure class="mb-12">
+            <img src="coffee.JPG" alt="一杯優雅的黑咖啡和相機" class="w-full rounded-xl">
+            <figcaption class="text-center mt-3 text-sm text-gray-500">
+                高雄咖啡師用儀式感的沖煮，點亮了這座港灣城市的夜。
+            </figcaption>
+        </figure>
+
+        <!-- 文章內容 -->
+        <article class="article-content max-w-none prose lg:prose-lg mx-auto">
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec1_title">
+                從自家烘豆開始：真心豆行的謙卑苦行
+            </h2>
+            
+            <p data-i18n="sec1_p1">
+                高雄的精品咖啡浪潮，多半從自家烘豆師的堅持開始。「真心豆行」（Jenshin Coffee）便是這股精神的代表。創辦人小吳哥在業界有深厚基礎，最終選擇專注於烘焙技術的鑽研。真心豆行秉持著嚴選精品生豆的原則，致力於提供最健康、最原始的咖啡風味。
+            </p>
+            
+            <p data-i18n="sec1_p2">
+                在真心的品項中，常見到如「衣索比亞橘光舞妓蜜處理」這樣的淺焙精品豆。其風味細膩，猶如古典樂般晶瑩剔透，帶有優雅的熟果與花香，甜感圓潤且不酸澀，這也是其廣受在地咖啡愛好者喜愛的原因。他們在高雄的多個據點，將清新的白色歐風設計吹入街角，價格親民，成為實踐日常咖啡美學的理想選擇。
+            </p>
+            
+            <!-- 圖片 1: 真心豆行 -->
+            <img src="coffee2.png" alt="真心豆行門市外觀或烘豆機" loading="lazy">
+            
+            <div class="pull-quote" data-i18n="sec1_quote">
+                「嚴選精品咖啡、深化與在地客戶的連結。」這是高雄獨立咖啡師在技術和情感上的共同堅持。
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec2_title">
+                冠軍的溫度：賴昱權與喔咖啡的共感信念
+            </h2>
+            
+            <p data-i18n="sec2_p1">
+                談及高雄咖啡，不能不提世界咖啡烘焙大賽冠軍賴昱權（Jacky Lai）創立的「喔咖啡」（OH! Café）。Jacky 不僅是技術上的頂尖職人，更透過咖啡傳遞一種「與人共感」的溫柔信念。他認為，一杯咖啡的精粹，在於它帶給人的情感和溫情。
+            </p>
+            
+            <p data-i18n="sec2_p2">
+                喔咖啡的空間設計常揉合日式懷舊風格與人文溫度。Jacky 曾研發一款名為「Dear J.」的咖啡，以核果甜度為主，後段帶出熟梅果味，微酸卻糅和著甜味。這款咖啡背後的故事，體現了咖啡師如何將風味設計與生活中的情感故事相結合，讓技術與溫度並存，將咖啡提升到藝術的層次。喔咖啡以精緻的手沖和穩定的烘焙品質，滿足了對風味有極致追求的咖啡客。
+            </p>
+            
+            <!-- 圖片 2: 喔咖啡 -->
+            <img src="coff3.png" alt="喔咖啡的冠軍烘豆師或手沖咖啡" loading="lazy">
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec3_title">
+                深夜的昭和浪漫：夜間部咖啡與銀座聚場
+            </h2>
+            
+            <p data-i18n="sec3_p1">
+                高雄的咖啡文化不僅限於白天，其深夜咖啡館同樣充滿了獨特魅力。例如「二木咖啡夜間部」（Futagi Coffee Roaster Night），它將老宅改裝成充滿日式昭和懷舊風格的空間，以木質裝潢、老物件、和昏黃的燈光，為夜貓子提供了一個安靜、放鬆、且充滿復古情懷的「深夜食堂」。他們的咖啡豆雖然不採深烘焙，但風味均衡，尤其搭配他們招牌的焦糖布丁或奶酥厚片，是夜晚裡簡單又滿足的享受。
+            </p>
+            
+            <p data-i18n="sec3_p2">
+                另一間在鹽埕區的「銀座聚場」（House of Takao Ginza），更是將老鹽埕的歷史特色應用到一棟 70 年老屋內。它藏身於高雄第一條百貨街——日治時期的「高雄銀座」商場巷弄中，空間中保留了磨石子地板、澡堂意象的凹陷吧檯。其飲品如「銀座特調」（加入鹽埕在地冬瓜糖的特調咖啡），讓咖啡不只是飲品，更是承載時光記憶的載體，帶領顧客進行一場跨越時空的懷舊之旅。
+            </p>
+            
+            <!-- 圖片 3: 夜間部咖啡或銀座聚場 -->
+            <img src="coff4.png" alt="銀座聚場或夜間部咖啡的昭和懷舊風格" loading="lazy">
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec4_title">
+                從一杯咖啡，讀懂高雄的城市溫度
+            </h2>
+            
+            <p data-i18n="sec4_p1">
+                這些獨立咖啡館，共同構成了高雄咖啡文化多元的樣貌。它們不追求大規模連鎖複製，而是堅持在自家烘焙、手工沖煮、以及獨特的空間氛圍上深耕細作。這正是高雄「職人精神」的體現：不急不躁，實在且有溫度。無論是精品咖啡的純粹，還是老屋特調的懷舊，高雄的咖啡師們正用一杯杯「入魂」的飲品，點亮港都的巷弄與夜晚。
+            </p>
+            
+            <!-- 圖片 4: 咖啡與城市剪影 -->
+            <img src="coffeeend.png" alt="一杯咖啡搭配高雄城市剪影" loading="lazy">
+            
+        </article>
+        
+        <!-- 簡潔文章底部分享區塊 -->
+        <footer class="mt-8 pt-4 border-t border-gray-200 text-center py-6">
+            <h3 class="text-xl font-bold text-gray-700 mb-4" data-i18n="share_title">分享這份美好</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-line"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="far fa-envelope"></i></a>
+            </div>
+        </footer>
+
+    </main>
+    
+    <!-- 完整頁尾區塊 -->
+    <footer class="bg-gray-800 text-white mt-16 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_newsletter_title">訂閱電子報</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="footer_newsletter_desc">掌握最新台日潮流與深度報導，每週發送一次。</p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row relative">
+                        <!-- 請注意: 這個表單需要您部署 Apps Script 才能真正寫入資料 -->
+                        <input id="email-input" type="email" data-i18n="footer_email_placeholder" placeholder="輸入您的 Email" class="p-3 w-full rounded-t-lg sm:rounded-l-lg sm:rounded-t-none text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-b-lg sm:rounded-r-lg sm:rounded-b-none font-medium transition" data-i18n="footer_subscribe_button">訂閱</button>
+                    </form>
+                    <div id="subscription-message" class="text-sm mt-3"></div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_about">關於我們</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_brand">品牌故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_team">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_contact">合作洽談</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_category">專欄分類</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Culture</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food & Drink</a></li>
+                        <li><a href="#" class="hover:text-white transition">Japan View</a></li>
+                        <li><a href="#" class="hover:text-white transition">Artisan Life</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                
+                <div class="order-3 sm:order-1 text-center sm:text-left text-gray-400 mt-6 sm:mt-0">
+                    <p>&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+                    <p class="mt-1" data-i18n="footer_issue_title">001期美好駁二</p>
+                </div>
+
+                <div class="order-2 text-center text-gray-400 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_terms">服務條款</a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_privacy">隱私權政策</a>
+                </div>
+
+                <div class="order-1 sm:order-3 flex justify-center space-x-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-line"></i></a> 
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

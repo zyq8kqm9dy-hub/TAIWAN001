@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>到京都小住：京都的慢生活</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 設定字體和風格 - 沿用專欄 1 的設計 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .article-content {
+            font-family: 'Noto Serif TC', serif;
+            line-height: 2.1;
+            color: #1f2937; /* text-gray-800 */
+        }
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        /* 圖片樣式 */
+        .article-content img {
+            display: block;
+            margin: 2.5rem auto; 
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+        }
+        .pull-quote {
+            border-left: 4px solid #48bb78; /* 綠色作為 JAVAN NEW VIEW 的主題色 */
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.125rem;
+            color: #4b5563; 
+        }
+        .lang-active {
+            background-color: #f3f4f6; 
+            border-color: #d1d5db; 
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 翻譯資料物件
+        const translations = {
+            "nav_slogan": { "zh": "喜歡台灣 也喜歡日本", "en": "Love Taiwan, Love Japan", "jp": "台湾が好き、日本も好き" },
+            "nav_zh": { "zh": "中文", "en": "Chinese", "jp": "中文" },
+            "nav_en": { "zh": "英文", "en": "English", "jp": "英語" },
+            "nav_jp": { "zh": "日文", "en": "Japanese", "jp": "日本語" },
+            "nav_subscribe": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" },
+            "nav_back_home": { "zh": "回主頁", "en": "Home", "jp": "ホームへ" },
+            "nav_save": { "zh": "收藏", "en": "Save", "jp": "保存" },
+
+            "col2_category": { "zh": "JAPAN NEW VIEW", "en": "JAPAN NEW VIEW", "jp": "日本新視角" },
+            "col2_issue_type": { "zh": "ISSUE. 001", "en": "ISSUE. 001", "jp": "ISSUE. 001" },
+            "col2_title": { "zh": "到京都小住：京都的慢生活", "en": "A Short Stay in Kyoto: The Slow Life of Kyoto", "jp": "京都に短期滞在：京都のゆっくりとした生活" },
+            "col2_subtitle": { "zh": "在京都，尋找深層次的精神療癒。我們帶您體驗「小住」的慢生活哲學：清晨漫步於寂靜禪院，在町家（Machiya）中沏茶。這份慢，是對工藝的珍視，對季節的敏感，更是對日常生活美學的堅持。", "en": "Seek deep spiritual healing in Kyoto. Experience the philosophy of 'Kozumi' (short stay) slow living: stroll through quiet Zen temples in the morning, and brew tea in a Machiya. This slowness embodies the appreciation of crafts, sensitivity to seasons, and adherence to everyday aesthetics.", "jp": "京都で、深層的な精神の癒しを探します。「小住」というゆっくりとした生活哲学を体験しましょう。早朝の静かな禅寺を散策し、町家で茶を淹れる。このスローペースは、工芸品への敬意、季節への敏感さ、そして日常生活の美学へのこだわりを表しています。" },
+            "col2_author": { "zh": "撰文 | Jane Lin", "en": "Writer | Jane Lin", "jp": "著者 | Jane Lin" },
+            "col2_date": { "zh": "2025.10.26", "en": "2025.10.26", "jp": "2025.10.26" },
+            
+            "sec1_title": { "zh": "體驗「小住」的哲學：與京都的呼吸同步", "en": "The Philosophy of 'Kozumi': Synchronizing with Kyoto's Breath", "jp": "「小住」の哲学体験：京都の呼吸と同期する" },
+            "sec1_p1": { "zh": "京都，這座千年古都，從來都不是用腳步丈量的地方，而是用心感受時間流動的場域。我們所提倡的「小住」（Kozumi），不同於走馬看花的觀光，它是一種將自己置入京都日常肌理的短期居住哲學。透過延長停留的時間，我們才能真正擺脫旅遊的喧囂，與這座城市古老的節奏同步。", "en": "Kyoto, this thousand-year-old capital, is not a place to be measured by steps, but a space to feel the flow of time with your heart. The 'Kozumi' (short stay) philosophy we advocate differs from rushed sightseeing; it is a philosophy of briefly embedding oneself into the daily fabric of Kyoto. By extending our stay, we can truly escape the hustle and bustle of tourism and synchronize with the city's ancient rhythm.", "jp": "千年の古都、京都は、足で測る場所ではなく、心で時の流れを感じる場です。私たちが提唱する「小住」（短期滞在）は、慌ただしい観光とは異なり、自分自身を京都の日常に溶け込ませる哲学です。滞在を延ばすことで、観光の喧騒から逃れ、この街の古のリズムと真に同期することができます。" },
+            "sec1_p2": { "zh": "「慢生活」在京都不是刻意放緩的行為，而是一種融入骨血的常態。清晨五點，當城市仍籠罩在薄霧中，您可以漫步在寂靜無人的禪院石板路上，感受木質建築散發出的靜謐禪意。這份寧靜，是京都獻給早起者的禮物，也是讓心靈沈澱的儀式。", "en": "The 'slow life' in Kyoto is not a deliberate slowing down, but a normal state integrated into its very core. At five in the morning, when the city is still shrouded in mist, you can stroll on the quiet flagstones of an empty Zen temple, feeling the tranquil Zen atmosphere emanating from the wooden structures. This stillness is Kyoto's gift to early risers and a ritual for calming the mind.", "jp": "京都における「ゆっくりとした生活」は、意図的にペースを落とす行為ではなく、骨の髄まで浸透した常態です。朝5時、街がまだ薄霧に包まれているとき、誰もいない静かな禅寺の石畳を散歩し、木造建築から漂う静謐な禅の雰囲気を感じることができます。この静けさは、早起きした人への京都からの贈り物であり、心を落ち着かせるための儀式でもあります。" },
+            
+            "sec2_title": { "zh": "町家與庭院：品味光影流動的場所", "en": "Machiya and Gardens: Places to Savor the Flow of Light and Shadow", "jp": "町家と庭園：光と影の流れを味わう場所" },
+            "sec2_p1": { "zh": "要體驗京都的慢，就必須從居住開始。選擇一間修復後的「京町家」（Kyo-Machiya）短期租賃，是最好的方式。這些傳統木造房屋有著狹長的空間設計，中間往往隱藏著一個精緻的「坪庭」（Tsubo-Niwa）。坪庭不僅是採光和通風的裝置，更是微觀宇宙的體現。", "en": "To experience the slowness of Kyoto, one must start with accommodation. Choosing a restored 'Kyo-Machiya' for a short-term rental is the best way. These traditional wooden houses feature a long, narrow design, often concealing a delicate 'Tsubo-Niwa' (courtyard garden) in the middle. The Tsubo-Niwa is not only for lighting and ventilation but also embodies a microcosm of the universe.", "jp": "京都の「ゆっくり」を体験するには、住居から始める必要があります。修復された「京町家」（Kyo-Machiya）を短期賃貸で選ぶのが最善の方法です。これらの伝統的な木造家屋は、細長い空間設計を持ち、その中央にはしばしば洗練された「坪庭」（Tsubo-Niwa）が隠されています。坪庭は採光と換気のためだけでなく、ミクロコスモス（小宇宙）の具現化でもあります。" },
+            "sec2_p2": { "zh": "每日的儀式，從清晨對著坪庭沏一壺宇治茶開始。看著茶湯的顏色，觀察庭院中苔蘚、石燈籠和水缽上的光影變化。這不是浪費時間，而是將時間凝結，專注於當下的細微美感。坪庭的四季變化，教導居住者對環境的敏感，是對自然的敬重，也是對侘寂（Wabi-Sabi）美學的實踐。", "en": "The daily ritual begins with brewing a pot of Uji tea facing the Tsubo-Niwa in the early morning. Watching the color of the tea, observing the changes in light and shadow on the moss, stone lanterns, and water basin in the courtyard. This is not wasting time, but freezing time, focusing on the subtle aesthetics of the present moment. The seasonal changes of the Tsubo-Niwa teach the residents sensitivity to the environment, respect for nature, and the practice of Wabi-Sabi aesthetics.", "jp": "毎日の儀式は、早朝に坪庭に向かって宇治茶を淹れることから始まります。茶の色を眺め、庭の苔、石灯籠、水鉢に映る光と影の変化を観察します。これは時間の浪費ではなく、時間を凝縮し、今という瞬間の微細な美しさに集中することです。坪庭の四季の変化は、住む者に環境への敏感さ、自然への敬意、そして侘び寂び（Wabi-Sabi）の美学の実践を教えてくれます。" },
+
+            <!-- 圖片 1: 町家坪庭 -->
+            "image1_alt": { "zh": "傳統京町家中的坪庭景觀", "en": "Courtyard garden view inside a traditional Kyo-Machiya", "jp": "伝統的な京町家の中庭（坪庭）の風景" },
+            
+            "sec3_title": { "zh": "職人精神與日常工藝的深度接觸", "en": "In-depth Contact with Artisan Spirit and Daily Craftsmanship", "jp": "職人精神と日常の工芸品との深い接触" },
+            "sec3_p1": { "zh": "慢生活的另一個核心是「職人精神」。在京都，工藝品不僅是商品，更是時間與心力累積的結晶。小住期間，您可以將日常活動轉化為文化體驗：在西陣地區找尋和服織造的匠人，在清水寺周邊參觀陶瓷燒製的工房。與這些職人交談，你會明白，他們堅持的不是速度，而是對細節的極致追求，以及對材料的尊重。", "en": "Another core of the slow life is the 'artisan spirit.' In Kyoto, craftsmanship is not just a commodity but the crystallization of accumulated time and effort. During your short stay, you can transform daily activities into cultural experiences: seek out kimono weavers in the Nishijin area, and visit pottery workshops near Kiyomizu-dera. Talking to these artisans, you will understand that their insistence is not on speed, but on the extreme pursuit of detail and respect for materials.", "jp": "ゆっくりとした生活のもう一つの核は、「職人精神」です。京都では、工芸品は単なる商品ではなく、時間と労力が積み重なった結晶です。短期滞在中に、日常の活動を文化体験に変えることができます。西陣地区で着物織りの職人を探したり、清水寺周辺で陶芸工房を訪れたり。これらの職人と話すことで、彼らがこだわるのはスピードではなく、細部への究極の追求と素材への敬意であることが理解できるでしょう。" },
+            "sec3_p2": { "zh": "從一杯茶碗的溫度、一塊和菓子的甜度，到一塊風呂敷（Furoshiki）的圖案，京都的工藝無所不在，且充滿哲思。在京都的菜市場採買食材，用當地職人製作的刀具處理，再用他們燒製的陶器盛放，這整個過程，便是對慢生活美學最完整的實踐。", "en": "From the temperature of a tea bowl and the sweetness of a wagashi (Japanese confection) to the pattern of a Furoshiki (wrapping cloth), Kyoto's craftsmanship is omnipresent and full of philosophy. Buying ingredients at a local market, preparing them with knives made by local artisans, and serving them in their pottery—this entire process is the most complete practice of the slow life aesthetic.", "jp": "茶碗の温度、和菓子の甘さ、風呂敷の模様に至るまで、京都の工芸品は至る所にあり、哲学に満ちています。地元の市場で食材を買い、地元の職人が作った包丁で調理し、彼らが焼いた陶器に盛り付ける。この一連のプロセス全体が、ゆっくりとした生活美学の最も完全な実践なのです。" },
+
+            <!-- 圖片 2: 職人精神圖 -->
+            "image2_alt": { "zh": "京都工藝職人在製作和服織物", "en": "Kyoto artisan working on Kimono fabric", "jp": "着物の織物を作る京都の職人" },
+            
+            "sec4_title": { "zh": "讓哲學滲入日常：尋找生活的間隙", "en": "Allowing Philosophy to Permeate Daily Life: Finding the Gaps in Living", "jp": "哲学を日常に浸透させる：生活の隙間を見つける" },
+            "sec4_p1": { "zh": "「小住」的最終意義，是訓練我們去尋找生活中的「間隙」（Ma, 間）。當我們在京都搭乘公車、等候拉麵，或在鴨川岸邊發呆時，不再焦慮於時間的流逝，而是享受這份獨處與留白。京都的城市設計本身就充滿了「間」的美學：寺廟間的林蔭小徑、路邊不起眼的水渠，都是讓人慢下來的空間。", "en": "The ultimate meaning of 'Kozumi' is training ourselves to find the 'gaps' (Ma, 間) in life. When we are riding the bus, waiting for ramen, or simply spacing out by the Kamo River in Kyoto, we no longer feel anxious about the passage of time, but enjoy the solitude and negative space. Kyoto's urban design itself is filled with the aesthetics of 'Ma': the tree-lined paths between temples and the unassuming roadside canals are all spaces designed to slow people down.", "jp": "「小住」の最終的な意味は、生活の中の「間」（Ma, ま）を見つける訓練をすることです。京都でバスに乗り、ラーメンを待ち、あるいは鴨川のほとりでぼんやりしているとき、時間の経過に焦りを感じるのではなく、この孤独と余白を楽しみます。京都の都市設計そのものが「間」の美学に満ちています。寺院の間の並木道や、目立たない路傍の用水路は、すべて人を減速させるために設計された空間なのです。" },
+            "sec4_p2": { "zh": "這份慢，最終目標是讓我們將這份美學帶回自己的生活。學會像京都人一樣，在忙碌中找到專注的時刻，在平凡中發現工藝的精華。這就是「到京都小住」的價值：它不是一段旅程的結束，而是對美好生活重新開始的覺醒。", "en": "The ultimate goal of this slowness is for us to bring this aesthetic back into our own lives. To learn to find moments of focus amidst busyness, and to discover the essence of craftsmanship within the ordinary, just like the people of Kyoto. This is the value of 'Kozumi' in Kyoto: it is not the end of a journey, but an awakening to the restart of a beautiful life.", "jp": "この「ゆっくり」の最終的な目的は、この美学を自分たちの生活に取り戻すことです。京都の人々のように、忙しさの中に集中できる瞬間を見つけ、平凡さの中に工芸の精髄を発見することを学ぶ。これこそが「京都での小住」の価値です。それは旅の終わりではなく、美しい生活を再開するための目覚めなのです。" },
+            
+            <!-- 圖片 3: 哲學/鴨川圖 -->
+            "image3_alt": { "zh": "鴨川岸邊的閒適時光", "en": "Leisure time by the Kamo River", "jp": "鴨川のほとりでのゆったりとした時間" },
+            
+            "share_title": { "zh": "分享這份美好", "en": "Share the Beauty", "jp": "この美しさをシェア" },
+
+            "footer_issue_title": { "zh": "001期美好駁二", "en": "Issue 001: Beautiful Pier-2", "jp": "001号 美しい駁二" },
+            "footer_terms": { "zh": "服務條款", "en": "Terms of Service", "jp": "利用規約" },
+            "footer_privacy": { "zh": "隱私權政策", "en": "Privacy Policy", "jp": "プライバシーポリシー" },
+            "footer_about": { "zh": "關於我們", "en": "About Us", "jp": "会社概要" },
+            "footer_brand": { "zh": "品牌故事", "en": "Brand Story", "jp": "ブランドストーリー" },
+            "footer_team": { "zh": "編輯團隊", "en": "Editorial Team", "jp": "編集チーム" },
+            "footer_contact": { "zh": "合作洽談", "en": "Business Inquiries", "jp": "ビジネス提携" },
+            "footer_category": { "zh": "專欄分類", "en": "Categories", "jp": "コラム分類" },
+            "footer_newsletter_title": { "zh": "訂閱電子報", "en": "Subscribe to Newsletter", "jp": "ニュースレター購読" },
+            "footer_newsletter_desc": { "zh": "掌握最新台日潮流與深度報導，每週發送一次。", "en": "Stay updated with the latest Taiwan-Japan trends and in-depth reports, sent weekly.", "jp": "最新の台日トレンドと深掘りレポートを毎週お届けします。" },
+            "footer_email_placeholder": { "zh": "輸入您的 Email", "en": "Enter your Email", "jp": "メールアドレスを入力" },
+            "footer_subscribe_button": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" }
+        };
+
+        let currentLang = 'zh'; 
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    if (el.tagName === 'INPUT' && el.type === 'email') {
+                        el.placeholder = translations[key][lang];
+                    } else {
+                        el.textContent = translations[key][lang];
+                    }
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                btn.classList.remove('lang-active');
+                if (btnLang === lang) {
+                    btn.classList.add('lang-active');
+                }
+            });
+            document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'en' ? 'en' : 'zh-Hant');
+        }
+
+        window.onload = function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
+            });
+            setLanguage('zh'); 
+            
+            // 訂閱表單處理 (Apps Script) - 需要替換 URL
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                // 假設您的 Apps Script URL 部署在這裡
+                const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec'; 
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('email-input').value.trim();
+                    const messageDiv = document.getElementById('subscription-message');
+                    
+                    if (!email || !email.includes('@')) {
+                        messageDiv.textContent = translations['msg_error'][currentLang] || '❌ 訂閱失敗，請檢查 Email 格式。';
+                        messageDiv.className = 'text-sm mt-3 text-red-500';
+                        return;
+                    }
+                    
+                    messageDiv.textContent = translations['msg_loading'][currentLang] || '處理中...';
+                    messageDiv.className = 'text-sm mt-3 text-yellow-500';
+
+                    // 模擬發送 POST 請求到 Apps Script URL
+                    fetch(GAS_WEB_APP_URL, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email })
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.status === 'success') {
+                            messageDiv.textContent = translations['msg_success'][currentLang] || '✅ 訂閱成功！感謝您的支持。';
+                            messageDiv.className = 'text-sm mt-3 text-green-500';
+                            document.getElementById('email-input').value = '';
+                        } else {
+                            messageDiv.textContent = translations['msg_error'][currentLang] || '❌ 訂閱失敗。';
+                            messageDiv.className = 'text-sm mt-3 text-red-500';
+                        }
+                    })
+                    .catch(() => {
+                        messageDiv.textContent = translations['msg_error'][currentLang] || '❌ 連線錯誤，請稍後再試。';
+                        messageDiv.className = 'text-sm mt-3 text-red-500';
+                    });
+                });
+            }
+        };
+    </script>
+
+    
+    <!-- 導航列 (刊頭) -->
+    <nav class="bg-white shadow-md w-full sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-40 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-4 flex-grow">
+                <a href="index.html" class="flex items-end">
+                    <!-- 您的 Logo 圖片佔位符 -->
+                    <img src="logonew.png" alt="台いすき Logo" class="h-40">
+                </a>
+                <p class="hidden md:block text-gray-600 text-base font-medium" data-i18n="nav_slogan">喜歡台灣 也喜歡日本</p>
+            </div>
+            
+            <div class="flex items-center space-x-3 text-sm">
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 border border-gray-300 rounded hover:bg-gray-100 transition" data-lang="zh" data-i18n="nav_zh">中文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="en" data-i18n="nav_en">英文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="jp" data-i18n="nav_jp">日文</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition" data-i18n="nav_subscribe">訂閱</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 專欄內容主區塊 -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- 頂部資訊與標題 -->
+        <header class="text-center mb-12">
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-green-700 bg-green-100 rounded-full mb-4" data-i18n="col2_issue_type">
+                ISSUE. 001
+            </span>
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-green-700 bg-green-100 rounded-full mb-4" data-i18n="col2_category">
+                JAPAN NEW VIEW
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 font-serif" data-i18n="col2_title">
+                到京都小住：京都的慢生活
+            </h1>
+            <p class="text-lg text-gray-500 italic max-w-2xl mx-auto mb-6" data-i18n="col2_subtitle">
+                在京都，尋找深層次的精神療癒。我們帶您體驗「小住」的慢生活哲學：清晨漫步於寂靜禪院，在町家（Machiya）中沏茶。這份慢，是對工藝的珍視，對季節的敏感，更是對日常生活美學的堅持。
+            </p>
+            <div class="flex justify-center items-center mt-3 text-gray-600 text-sm">
+                <span class="mr-4" data-i18n="col2_author">撰文 | Jane Lin</span>
+                <span><i class="far fa-clock mr-1"></i> <span data-i18n="col2_date">2025.10.26</span></span>
+            </div>
+        </header>
+
+        <!-- 主視覺圖 - 移至引言區後 -->
+        <figure class="mb-12">
+            <img src="kyoto.JPG" alt="京都傳統町家與靜謐的街道" class="w-full rounded-xl">
+            <figcaption class="text-center mt-3 text-sm text-gray-500">
+                町家建築的靜謐，是體驗京都慢生活的起點。
+            </figcaption>
+        </figure>
+
+        <!-- 文章內容 -->
+        <article class="article-content max-w-none prose lg:prose-lg mx-auto">
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec1_title">
+                體驗「小住」的哲學：與京都的呼吸同步
+            </h2>
+            
+            <p data-i18n="sec1_p1">
+                京都，這座千年古都，從來都不是用腳步丈量的地方，而是用心感受時間流動的場域。我們所提倡的「小住」（Kozumi），不同於走馬看花的觀光，它是一種將自己置入京都日常肌理的短期居住哲學。透過延長停留的時間，我們才能真正擺脫旅遊的喧囂，與這座城市古老的節奏同步。
+            </p>
+            
+            <p data-i18n="sec1_p2">
+                「慢生活」在京都不是刻意放緩的行為，而是一種融入骨血的常態。清晨五點，當城市仍籠罩在薄霧中，您可以漫步在寂靜無人的禪院石板路上，感受木質建築散發出的靜謐禪意。這份寧靜，是京都獻給早起者的禮物，也是讓心靈沈澱的儀式。
+            </p>
+            
+            <div class="pull-quote" data-i18n="sec1_quote">
+                這份慢，是對工藝的珍視，對季節的敏感，更是對日常生活美學的堅持。
+            </div>
+
+            <!-- 圖片 1: 禪院或石板路 -->
+            <img src="2road.JPG" alt="京都寂靜的禪院石板路" loading="lazy">
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec2_title">
+                町家與庭院：品味光影流動的場所
+            </h2>
+            
+            <p data-i18n="sec2_p1">
+                要體驗京都的慢，就必須從居住開始。選擇一間修復後的「京町家」（Kyo-Machiya）短期租賃，是最好的方式。這些傳統木造房屋有著狹長的空間設計，中間往往隱藏著一個精緻的「坪庭」（Tsubo-Niwa）。坪庭不僅是採光和通風的裝置，更是微觀宇宙的體現。
+            </p>
+            
+            <p data-i18n="sec2_p2">
+                每日的儀式，從清晨對著坪庭沏一壺宇治茶開始。看著茶湯的顏色，觀察庭院中苔蘚、石燈籠和水缽上的光影變化。這不是浪費時間，而是將時間凝結，專注於當下的細微美感。坪庭的四季變化，教導居住者對環境的敏感，是對自然的敬重，也是對侘寂（Wabi-Sabi）美學的實踐。
+            </p>
+            
+            <!-- 圖片 2: 町家坪庭 -->
+            <img src="B3room.JPG" alt="傳統京町家中的坪庭景觀" loading="lazy">
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec3_title">
+                職人精神與日常工藝的深度接觸
+            </h2>
+            
+            <p data-i18n="sec3_p1">
+                慢生活的另一個核心是「職人精神」。在京都，工藝品不僅是商品，更是時間與心力累積的結晶。小住期間，您可以將日常活動轉化為文化體驗：在西陣地區找尋和服織造的匠人，在清水寺周邊參觀陶瓷燒製的工房。與這些職人交談，你會明白，他們堅持的不是速度，而是對細節的極致追求，以及對材料的尊重。
+            </p>
+            
+            <p data-i18n="sec3_p2">
+                從一杯茶碗的溫度、一塊和菓子的甜度，到一塊風呂敷（Furoshiki）的圖案，京都的工藝無所不在，且充滿哲思。在京都的菜市場採買食材，用當地職人製作的刀具處理，再用他們燒製的陶器盛放，這整個過程，便是對慢生活美學最完整的實踐。
+            </p>
+            
+            <!-- 圖片 3: 職人精神圖 -->
+            <img src="b4food.png" alt="京都工藝職人在製作和服織物" loading="lazy">
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec4_title">
+                讓哲學滲入日常：尋找生活的間隙
+            </h2>
+            
+            <p data-i18n="sec4_p1">
+                「小住」的最終意義，是訓練我們去尋找生活中的「間隙」（Ma, 間）。當我們在京都搭乘公車、等候拉麵，或在鴨川岸邊發呆時，不再焦慮於時間的流逝，而是享受這份獨處與留白。京都的城市設計本身就充滿了「間」的美學：寺廟間的林蔭小徑、路邊不起眼的水渠，都是讓人慢下來的空間。
+            </p>
+            
+            <p data-i18n="sec4_p2">
+                這份慢，最終目標是讓我們將這份美學帶回自己的生活。學會像京都人一樣，在忙碌中找到專注的時刻，在平凡中發現工藝的精華。這就是「到京都小住」的價值：它不是一段旅程的結束，而是對美好生活重新開始的覺醒。
+            </p>
+            
+            <!-- 圖片 4: 結語圖 -->
+            <img src="endriver.JPG" alt="鴨川岸邊的閒適時光" loading="lazy">
+        </article>
+        
+        <!-- 簡潔文章底部分享區塊 -->
+        <footer class="mt-8 pt-4 border-t border-gray-200 text-center py-6">
+            <h3 class="text-xl font-bold text-gray-700 mb-4" data-i18n="share_title">分享這份美好</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-line"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="far fa-envelope"></i></a>
+            </div>
+        </footer>
+
+    </main>
+    
+    <!-- 完整頁尾區塊 -->
+    <footer class="bg-gray-800 text-white mt-16 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_newsletter_title">訂閱電子報</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="footer_newsletter_desc">掌握最新台日潮流與深度報導，每週發送一次。</p>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row relative">
+                        <!-- 請注意: 這個表單需要您部署 Apps Script 才能真正寫入資料 -->
+                        <input id="email-input" type="email" data-i18n="footer_email_placeholder" placeholder="輸入您的 Email" class="p-3 w-full rounded-t-lg sm:rounded-l-lg sm:rounded-t-none text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-b-lg sm:rounded-r-lg sm:rounded-b-none font-medium transition" data-i18n="footer_subscribe_button">訂閱</button>
+                    </form>
+                    <div id="subscription-message" class="text-sm mt-3"></div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_about">關於我們</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_brand">品牌故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_team">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_contact">合作洽談</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_category">專欄分類</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Culture</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food & Drink</a></li>
+                        <li><a href="#" class="hover:text-white transition">Japan View</a></li>
+                        <li><a href="#" class="hover:text-white transition">Artisan Life</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                
+                <div class="order-3 sm:order-1 text-center sm:text-left text-gray-400 mt-6 sm:mt-0">
+                    <p>&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+                    <p class="mt-1" data-i18n="footer_issue_title">001期美好駁二</p>
+                </div>
+
+                <div class="order-2 text-center text-gray-400 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_terms">服務條款</a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_privacy">隱私權政策</a>
+                </div>
+
+                <div class="order-1 sm:order-3 flex justify-center space-x-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-line"></i></a> 
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>駁二的美好重生</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 設定字體和風格 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .article-content {
+            font-family: 'Noto Serif TC', serif;
+            line-height: 2.1;
+            color: #1f2937; /* text-gray-800 */
+        }
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        /* 圖片樣式 */
+        .article-content img {
+            display: block;
+            margin: 2.5rem auto; 
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .pull-quote {
+            border-left: 4px solid #4f46e5; 
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.125rem;
+            color: #4b5563; 
+        }
+        .lang-active {
+            background-color: #f3f4f6; 
+            border-color: #d1d5db; 
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 翻譯資料物件 (Chinese Traditional -> English/Japanese)
+        const translations = {
+            "nav_slogan": { "zh": "喜歡台灣 也喜歡日本", "en": "Love Taiwan, Love Japan", "jp": "台湾が好き、日本も好き" },
+            "nav_zh": { "zh": "中文", "en": "Chinese", "jp": "中文" },
+            "nav_en": { "zh": "英文", "en": "English", "jp": "英語" },
+            "nav_jp": { "zh": "日文", "en": "Japanese", "jp": "日本語" },
+            "nav_subscribe": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" },
+            "nav_back_home": { "zh": "回主頁", "en": "Home", "jp": "ホームへ" },
+            "nav_save": { "zh": "收藏", "en": "Save", "jp": "保存" },
+
+            "col1_category": { "zh": "CULTURE & LIFESTYLE", "en": "CULTURE & LIFESTYLE", "jp": "カルチャー＆ライフスタイル" },
+            "col1_issue_type": { "zh": "ISSUE. 001", "en": "ISSUE. 001", "jp": "ISSUE. 001" },
+            "col1_title": { "zh": "駁二的美好重生：城市與海的聚落新生", "en": "The Wonderful Rebirth of Pier-2: A New Community of City and Sea", "jp": "駁二の華麗なる再生：都市と海の集落新生" },
+            "col1_subtitle": { "zh": "從沉睡的碼頭倉庫，到南台灣青年創意與設計浪潮的基地。駁二不僅是一座藝術特區，更是高雄面向山與海，展現其南方新文化精神的門戶。", "en": "From dormant port warehouses to a base for youth creativity and design waves in Southern Taiwan. Pier-2 is not just an art district, but a gateway for Kaohsiung, facing the mountains and the sea, demonstrating its new Southern cultural spirit.", "jp": "眠っていた埠頭の倉庫から、台湾南部における若者の創造とデザインの波の拠点へ。駁二は単なる芸術特区ではなく、高雄が山と海に向き合い、その南方新文化精神を示す玄関口です。" },
+            "col1_author": { "zh": "撰文 | Kisaragi", "en": "Writer | Kisaragi", "jp": "著者 | Kisaragi" },
+            "col1_date": { "zh": "2025.10.26", "en": "2025.10.26", "jp": "2025.10.26" },
+            
+            "sec1_title": { "zh": "從「閒置」到「指標」的華麗轉身：歷史的延續", "en": "The Gorgeous Turnaround: From 'Dormant' to 'Landmark'—A Historical Continuation", "jp": "「休眠」から「指標」への華麗なる転身：歴史の継続" },
+            "sec1_p1": { "zh": "在高雄，有一個地方，它見證了港都數十年的興衰與變遷，如今又以全新的面貌，成為南台灣最閃耀的文化符號——那便是駁二藝術特區。它不再是冰冷的倉庫群，而是充滿活力、創意湧動的「城市與海的聚落新生」。", "en": "In Kaohsiung, there is a place that has witnessed the rise and fall of the harbor city for decades, and now, with a brand-new appearance, it has become Southern Taiwan's most dazzling cultural symbol—that is the Pier-2 Art Center. It is no longer a cold cluster of warehouses, but a vibrant, creativity-surging 'new community of city and sea.'", "jp": "高雄には、数十年にわたる港町の盛衰を見守り、今や真新しい姿で台湾南部で最も輝く文化的な象徴となった場所があります。それが駁二芸術特区です。ここはもはや冷たい倉庫群ではなく、活力と創造性にあふれる「都市と海の新しい集落」なのです。" },
+            "sec1_p2": { "zh": "「駁二」二字，原是第二號接駁碼頭的簡稱。這些日治時期留下的舊倉庫，曾經堆滿米、糖、木材等貨物，在高雄港的黃金年代功不可沒。然而，隨著全球海運模式改變，貨櫃取代散裝貨運，這片第三船渠旁的區域在 1990 年代陷入沉寂，成為少年滑板、街頭塗鴉者的秘密基地，充滿了被邊緣化的詩意。", "en": "The name 'Pier-2' originates from the abbreviation for the second docking pier. These old warehouses, left over from the Japanese colonial era, were once filled with rice, sugar, and timber, playing a critical role in Kaohsiung Port's golden age. However, with the change in global shipping, containers replaced bulk cargo, and this area next to the Third Dock fell silent in the 1990s, becoming a secret base for skateboarders and street artists, imbued with the poetry of marginalization.", "jp": "「駁二」という名前は、第二号接駁埠頭の略称に由来します。日本統治時代から残るこれらの古い倉庫は、かつて米、砂糖、木材などの貨物で満たされ、高雄港の黄金時代に不可欠な役割を果たしました。しかし、世界の海運様式の変化に伴い、コンテナがバルク貨物に取って代わり、この第三船渠沿いの地域は1990年代に沈黙し、スケートボーダーやストリートグラフィティアーティストの秘密基地となり、周縁化された詩情に満ちていました。" },
+            "sec1_quote": { "zh": "駁二的華麗轉身，是台灣城市再生中的經典案例，它拒絕粗暴的拆除重建，而是選擇「保留舊屋體」、「活化空間」，讓舊的活下去，新的也能扎根。", "en": "The splendid transformation of Pier-2 is a classic case of urban regeneration in Taiwan. It refused brutal demolition and reconstruction, instead choosing to 'preserve the old structures' and 'activate the space,' allowing the old to live and the new to take root.", "jp": "駁二の華麗な転身は、台湾の都市再生における模範例です。それは性急な解体・再建を拒否し、「古い建物を保持」し「空間を活性化」させることを選び、古いものを生かし、新しいものも根付くことを可能にしました。" },
+            
+            "sec2_title": { "zh": "日式文創的細膩與港都的粗獷美學：年輕人才的聚落", "en": "The Delicacy of Japanese Culture and the Rugged Aesthetics of the Port City: A Hub for Young Talent", "jp": "日本の文化の繊細さと港町の荒々しい美学：若者の才能が集まる場所" },
+            "sec2_p1": { "zh": "駁二的成功，在於其獨特的風格調性。它巧妙地融合了高雄港口的粗獷工業美學，以及台灣新一代文創人所汲取的日式細膩工藝精神。這種強烈的對比與融合，吸引了大量年輕設計師、藝術家和獨立品牌在此設立工作室和特色店鋪。", "en": "Pier-2's success lies in its unique stylistic tone. It skillfully blends the rugged industrial aesthetics of Kaohsiung Port with the delicate Japanese craftsmanship adopted by Taiwan's new generation of cultural creators. This strong contrast and fusion attract a large number of young designers, artists, and independent brands to establish studios and characteristic shops here.", "jp": "駁二の成功は、その独自のスタイルにあります。高雄港の荒々しい工業美学と、台湾の新世代の文化クリエイターが取り入れた日本の繊細な職人技が見事に融合しています。この強い対比と融合が、多くの若いデザイナーやアーティスト、独立ブランドを引きつけ、ここにスタジオや特色ある店を構えさせています。" },
+            "sec2_p2": { "zh": "這裡不僅是藝術家的「實驗工坊」，更是青年次文化的發聲地。在駁二，你可以看到年輕人將對在地文化（如高雄腔、在地美食）的理解，透過設計轉化為潮流 T-shirt、創意小物或實驗劇場。駁二的特色店鋪，例如結合舊船零件和當代設計的傢俱店，或是將台灣傳統文化圖騰融入極簡風格的服飾品牌，都展現了新一代設計師的獨立主張和對「台日生活美學」的獨到見解。", "en": "This place is not only an 'experimental workshop' for artists but also a platform for youth subculture. At Pier-2, you can see how young people translate their understanding of local culture (like the Kaohsiung accent and local cuisine) into trendy T-shirts, creative gadgets, or experimental theatre through design. The specialty shops here showcase the independent claims of new designers and their unique insights into 'Taiwan-Japan lifestyle aesthetics.'", "jp": "ここはアーティストの「実験工房」であるだけでなく、若者のサブカルチャーの発信地でもあります。駁二では、若者が地元文化（高雄訛りや地元グルメなど）への理解を、デザインを通じてトレンドのTシャツ、クリエイティブな小物、あるいは実験的な演劇へと昇華させるのを見ることができます。旧船の部品と現代デザインを組み合わせた家具店や、台湾の伝統的な模様をミニマルなスタイルに取り入れたアパレルブランドなど、駁二の特色ある店は、新世代デザイナーの独立した主張と「台日生活美学」に対する独自の洞察を示しています。" },
+
+            "sec3_title": { "zh": "每週末的文創市集：永不落幕的生活美學實驗場", "en": "The Weekend Cultural Market: A Never-Ending Laboratory of Lifestyle Aesthetics", "jp": "週末の文創マーケット：終わりのない生活美学の実験場" },
+            "sec3_p1": { "zh": "文創市集是駁二永不落幕的節慶。每逢假日，來自台灣各地的手作職人、獨立品牌集結於此，讓駁二成為一個巨大的生活美學實驗場。遊客在尋寶的樂趣中，不僅能買到獨特的商品，更能親身感受台灣與日本手作文化的細膩與溫度。這種由下而上、自發性的創意聚落，正是駁二能夠持續吸引國際目光的關鍵。", "en": "The cultural market is Pier-2's never-ending festival. Every holiday, artisans and independent brands from all over Taiwan gather here, turning Pier-2 into a massive laboratory of lifestyle aesthetics. Visitors, enjoying the thrill of discovery, can not only purchase unique goods but also personally feel the delicacy and warmth of Taiwanese and Japanese craft culture. This spontaneous, bottom-up creative community is the key to Pier-2's continuous international appeal.", "jp": "文創マーケットは駁二の終わりのない祭りです。祝日になると、台湾各地の職人や独立ブランドが集結し、駁二は巨大な生活美学の実験場となります。訪問者は宝探しの楽しみの中で、ユニークな商品を購入できるだけでなく、台湾と日本の手作り文化の繊細さと温かさを肌で感じることができます。このボトムアップで自発的なクリエイティブな集まりこそが、駁二が国際的な注目を集め続ける鍵です。" },
+            "sec3_p2": { "zh": "這份創意能量在每兩年一度的「高雄設計節」中達到高峰。設計節早已超越了單純的作品展示，轉變為深度探討城市議題、產業升級和文化科技融合的論壇。從早期關注在地歷史與工業遺產的設計，到近年結合 AI、AR 技術的數位內容創新，設計節將高雄視為一個巨型「潮牌」，用設計師的視角詮釋這座城市兼容並蓄、海派生猛的態度。", "en": "This creative energy culminates in the biennial 'Kaohsiung Design Festival.' The festival has long surpassed simple exhibition displays, evolving into a forum that deeply discusses urban issues, industrial upgrades, and the fusion of culture and technology. From early designs focusing on local history and industrial heritage, to recent innovations integrating AI and AR technology, the festival treats Kaohsiung as a colossal 'trendy brand,' interpreting the city's inclusive and bold spirit through the eyes of designers.", "jp": "この創造的なエネルギーは、2年に一度の「高雄デザインフェスティバル」で頂点に達します。デザインフェスティバルは、単なる作品展示を超え、都市問題、産業アップグレード、文化とテクノロジーの融合を深く議論するフォーラムへと進化しました。初期の地元歴史や産業遺産に焦点を当てたデザインから、近年のAI、AR技術を統合したデジタルコンテンツの革新に至るまで、デザインフェスティバルは高雄を巨大な「トレンドブランド」と見なし、デザイナーの視点からこの都市の包括的で豪快な姿勢を解釈しています。" },
+
+            "sec4_title": { "zh": "結語：面向山與海的「南方新浪潮」", "en": "Conclusion: The 'Southern New Wave' Facing the Mountains and the Sea", "jp": "結び：山と海に向き合う「南方新浪潮」" },
+            "sec4_p1": { "zh": "駁二藝術特區的成功，遠超乎一個觀光景點的意義。它證明了高雄有能力將其工業歷史的「黑」（重工業、黑手）與海洋文化的海派「生猛」結合，創造出一種獨特而強烈的「南方新浪潮」精神。這股浪潮，不僅僅是藝術上的前衛，更代表著高雄在「大南方新矽谷」的宏觀願景下，文化與科技共創、共融的決心。", "en": "The success of the Pier-2 Art Center goes far beyond being just a tourist attraction. It proves Kaohsiung's ability to combine the 'black' of its industrial past (heavy industry, manual labor) with the 'vitality' of its marine culture, creating a unique and powerful 'Southern New Wave' spirit. This wave represents not only artistic avant-garde but also Kaohsiung's determination to foster cultural and technological co-creation and fusion under the grand vision of the 'Great South Silicon Valley.'", "jp": "駁二芸術特区の成功は、単なる観光地の域を超えています。これは、高雄がその工業史の「黒」（重工業、肉体労働）と海洋文化の「豪快な活気」を融合させ、ユニークで強力な「南方新浪潮」の精神を創造する能力があることを証明しています。この波は、単なる芸術的な前衛性だけでなく、「大南方新シリコンバレー」の壮大なビジョンの下、文化とテクノロジーの共創・融合を目指す高雄の決意を象徴しています。" },
+            "sec4_p2": { "zh": "它以「無圍牆」的姿態，緊依著住家、面向著大海，成為高雄人生活與創作的交匯點，同時也是眾多日本旅人來到高雄的必訪之地。下次來到高雄，別忘了花一整天的時間，在駁二感受這份「城市與海」交織出的獨特魅力，並體驗這股正在亞洲崛起的南方新浪潮。", "en": "With its 'no walls' stance, nestled against residential areas and facing the sea, it has become a nexus for Kaohsiung people's lives and creations, and a must-visit destination for many Japanese travelers. Next time you come to Kaohsiung, be sure to spend a whole day at Pier-2 to experience the unique charm woven by 'city and sea' and feel the rising 'Southern New Wave' in Asia.", "jp": "「壁のない」姿勢で、住宅地に寄り添い、海に向かい合う駁二は、高雄市民の生活と創造の交差点であり、多くの日本人旅行者が高雄を訪れる際の必見の場所となっています。次に高雄に来る際は、ぜひ丸一日を駁二で過ごし、「都市と海」が織りなすこのユニークな魅力を感じ、アジアで台頭するこの南方新浪潮を体験してください。" },
+
+            "share_title": { "zh": "分享這份美好", "en": "Share the Beauty", "jp": "この美しさをシェア" },
+
+            "footer_issue_title": { "zh": "001期美好駁二", "en": "Issue 001: Beautiful Pier-2", "jp": "001号 美しい駁二" },
+            "footer_terms": { "zh": "服務條款", "en": "Terms of Service", "jp": "利用規約" },
+            "footer_privacy": { "zh": "隱私權政策", "en": "Privacy Policy", "jp": "プライバシーポリシー" },
+            "footer_about": { "zh": "關於我們", "en": "About Us", "jp": "会社概要" },
+            "footer_brand": { "zh": "品牌故事", "en": "Brand Story", "jp": "ブランドストーリー" },
+            "footer_team": { "zh": "編輯團隊", "en": "Editorial Team", "jp": "編集チーム" },
+            "footer_contact": { "zh": "合作洽談", "en": "Business Inquiries", "jp": "ビジネス提携" },
+            "footer_category": { "zh": "專欄分類", "en": "Categories", "jp": "コラム分類" },
+            "footer_newsletter_title": { "zh": "訂閱電子報", "en": "Subscribe to Newsletter", "jp": "ニュースレター購読" },
+            "footer_newsletter_desc": { "zh": "掌握最新台日潮流與深度報導，每週發送一次。", "en": "Stay updated with the latest Taiwan-Japan trends and in-depth reports, sent weekly.", "jp": "最新の台日トレンドと深掘りレポートを毎週お届けします。" },
+            "footer_email_placeholder": { "zh": "輸入您的 Email", "en": "Enter your Email", "jp": "メールアドレスを入力" },
+            "footer_subscribe_button": { "zh": "訂閱", "en": "Subscribe", "jp": "購読" }
+        };
+
+        let currentLang = 'zh'; 
+
+        // 核心翻譯函式
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 處理所有 data-i18n 標籤
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    if (el.tagName === 'INPUT' && el.type === 'email') {
+                        // 處理輸入框的 placeholder
+                        el.placeholder = translations[key][lang];
+                    } else {
+                        // 處理一般文字內容
+                        el.textContent = translations[key][lang];
+                    }
+                }
+            });
+
+            // 處理導航按鈕的 active 狀態
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const btnLang = btn.getAttribute('data-lang');
+                btn.classList.remove('lang-active');
+                if (btnLang === lang) {
+                    btn.classList.add('lang-active');
+                }
+            });
+
+            // 更新 HTML lang 屬性 (可選，但對 SEO 和可訪問性有幫助)
+            document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'en' ? 'en' : 'zh-Hant');
+        }
+
+        // 設置事件監聽器
+        window.onload = function() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
+            });
+
+            // 初始載入時設定為中文
+            setLanguage('zh'); 
+        };
+    </script>
+
+    
+    <!-- 導航列 -->
+    <nav class="bg-white shadow-md w-full sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-40 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-4 flex-grow">
+                <a href="index.html" class="flex items-end">
+                    <img src="logonew.png" alt="台いすき Logo" class="h-40">
+                </a>
+                <p class="hidden md:block text-gray-600 text-base font-medium" data-i18n="nav_slogan">喜歡台灣 也喜歡日本</p>
+            </div>
+            
+            <div class="flex items-center space-x-3 text-sm">
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 border border-gray-300 rounded hover:bg-gray-100 transition" data-lang="zh" data-i18n="nav_zh">中文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="en" data-i18n="nav_en">英文</a>
+                <a href="#" class="lang-btn px-2 py-1 text-gray-700 hover:text-indigo-600 transition hidden sm:inline-block" data-lang="jp" data-i18n="nav_jp">日文</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition" data-i18n="nav_subscribe">訂閱</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 專欄內容主區塊 -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- 頂部資訊與標題 -->
+        <header class="text-center mb-12">
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-100 rounded-full mb-4" data-i18n="col1_issue_type">
+                ISSUE. 001
+            </span>
+            <span class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-100 rounded-full mb-4" data-i18n="col1_category">
+                CULTURE & LIFESTYLE
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 font-serif" data-i18n="col1_title">
+                駁二的美好重生：城市與海的聚落新生
+            </h1>
+            <p class="text-lg text-gray-500 italic max-w-2xl mx-auto mb-6" data-i18n="col1_subtitle">
+                從沉睡的碼頭倉庫，到南台灣青年創意與設計浪潮的基地。駁二不僅是一座藝術特區，更是高雄面向山與海，展現其南方新文化精神的門戶。
+            </p>
+            <div class="flex justify-center items-center mt-3 text-gray-600 text-sm">
+                <span class="mr-4" data-i18n="col1_author">撰文 | Kisaragi</span>
+                <span><i class="far fa-clock mr-1"></i> <span data-i18n="col1_date">2025.10.26</span></span>
+            </div>
+        </header>
+
+        <!-- 主視覺圖 - 移至引言區後 -->
+        <figure class="mb-12">
+            <img src="no.2.png" alt="駁二藝術特區的彩色貨櫃與海景" class="w-full rounded-xl">
+            <figcaption class="text-center mt-3 text-sm text-gray-500">
+                高雄駁二藝術特區，海港的粗獷與藝術的細膩在此交匯。
+            </figcaption>
+        </figure>
+
+        <!-- 文章內容 -->
+        <article class="article-content max-w-none prose lg:prose-lg mx-auto">
+            
+            <p data-i18n="sec1_p1">
+                在高雄，有一個地方，它見證了港都數十年的興衰與變遷，如今又以全新的面貌，成為南台灣最閃耀的文化符號——那便是駁二藝術特區。它不再是冰冷的倉庫群，而是充滿活力、創意湧動的「城市與海的聚落新生」。
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec1_title">
+                從「閒置」到「指標」的華麗轉身：歷史的延續
+            </h2>
+            
+            <p data-i18n="sec1_p2">
+                「駁二」二字，原是第二號接駁碼頭的簡稱。這些日治時期留下的舊倉庫，曾經堆滿米、糖、木材等貨物，在高雄港的黃金年代功不可沒。然而，隨著全球海運模式改變，貨櫃取代散裝貨運，這片第三船渠旁的區域在 1990 年代陷入沉寂，成為少年滑板、街頭塗鴉者的秘密基地，充滿了被邊緣化的詩意。
+            </p>
+            
+            <div class="pull-quote" data-i18n="sec1_quote">
+                駁二的華麗轉身，是台灣城市再生中的經典案例，它拒絕粗暴的拆除重建，而是選擇「保留舊屋體」、「活化空間」，讓舊的活下去，新的也能扎根。
+            </div>
+            
+            <!-- 圖片 1: 歷史脈絡圖 -->
+            <img src="old.story.png" alt="駁二舊倉庫的歷史痕跡" loading="lazy">
+            
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec2_title">
+                日式文創的細膩與港都的粗獷美學：年輕人才的聚落
+            </h2>
+            
+            <p data-i18n="sec2_p1">
+                駁二的成功，在於其獨特的風格調性。它巧妙地融合了高雄港口的粗獷工業美學，以及台灣新一代文創人所汲取的日式細膩工藝精神。這種強烈的對比與融合，吸引了大量年輕設計師、藝術家和獨立品牌在此設立工作室和特色店鋪。
+            </p>
+            
+            <p data-i18n="sec2_p2">
+                這裡不僅是藝術家的「實驗工坊」，更是青年次文化的發聲地。在駁二，你可以看到年輕人將對在地文化（如高雄腔、在地美食）的理解，透過設計轉化為潮流 T-shirt、創意小物或實驗劇場。駁二的特色店鋪，例如結合舊船零件和當代設計的傢俱店，或是將台灣傳統文化圖騰融入極簡風格的服飾品牌，都展現了新一代設計師的獨立主張和對「台日生活美學」的獨到見解。
+            </p>
+
+            <!-- 圖片 2: 潮文化/特色店圖 -->
+            <img src="culture.png" alt="駁二內部設計師工作室" loading="lazy">
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec3_title">
+                每週末的文創市集：永不落幕的生活美學實驗場
+            </h2>
+            
+            <p data-i18n="sec3_p1">
+                文創市集是駁二永不落幕的節慶。每逢假日，來自台灣各地的手作職人、獨立品牌集結於此，讓駁二成為一個巨大的生活美學實驗場。遊客在尋寶的樂趣中，不僅能買到獨特的商品，更能親身感受台灣與日本手作文化的細膩與溫度。這種由下而上、自發性的創意聚落，正是駁二能夠持續吸引國際目光的關鍵。
+            </p>
+            
+            <p data-i18n="sec3_p2">
+                這份創意能量在每兩年一度的「高雄設計節」中達到高峰。設計節早已超越了單純的作品展示，轉變為深度探討城市議題、產業升級和文化科技融合的論壇。從早期關注在地歷史與工業遺產的設計，到近年結合 AI、AR 技術的數位內容創新，設計節將高雄視為一個巨型「潮牌」，用設計師的視角詮釋這座城市兼容並蓄、海派生猛的態度。
+            </p>
+            
+            <!-- 圖片 3: 文創市集圖 -->
+            <img src="manypeople.png" alt="駁二戶外文創市集" loading="lazy">
+
+            <h2 class="text-2xl sm:text-3xl text-gray-900 font-bold" data-i18n="sec4_title">
+                結語：面向山與海的「南方新浪潮」
+            </h2>
+            
+            <p data-i18n="sec4_p1">
+                駁二藝術特區的成功，遠超乎一個觀光景點的意義。它證明了高雄有能力將其工業歷史的「黑」（重工業、黑手）與海洋文化的海派「生猛」結合，創造出一種獨特而強烈的「南方新浪潮」精神。這股浪潮，不僅僅是藝術上的前衛，更代表著高雄在「大南方新矽谷」的宏觀願景下，文化與科技共創、共融的決心。
+            </p>
+            
+            <!-- 圖片 4: 結語圖 -->
+            <img src="end.png" alt="駁二夜晚燈光與港灣" loading="lazy">
+
+            <p data-i18n="sec4_p2">
+                它以「無圍牆」的姿態，緊依著住家、面向著大海，成為高雄人生活與創作的交匯點，同時也是眾多日本旅人來到高雄的必訪之地。下次來到高雄，別忘了花一整天的時間，在駁二感受這份「城市與海」交織出的獨特魅力，並體驗這股正在亞洲崛起的南方新浪潮。
+            </p>
+        </article>
+        
+        <!-- 簡潔文章底部分享區塊 -->
+        <footer class="mt-8 pt-4 border-t border-gray-200 text-center py-6">
+            <h3 class="text-xl font-bold text-gray-700 mb-4" data-i18n="share_title">分享這份美好</h3>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="fab fa-line"></i></a>
+                <a href="#" class="text-gray-500 hover:text-indigo-600 transition text-2xl"><i class="far fa-envelope"></i></a>
+            </div>
+            <!-- 藍色返回連結已移除 -->
+        </footer>
+
+    </main>
+    
+    <!-- 完整頁尾區塊 -->
+    <footer class="bg-gray-800 text-white mt-16 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_newsletter_title">訂閱電子報</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="footer_newsletter_desc">掌握最新台日潮流與深度報導，每週發送一次。</p>
+                    <form class="flex">
+                        <input type="email" data-i18n="footer_email_placeholder" placeholder="輸入您的 Email" class="p-3 w-full rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-r-lg font-medium transition" data-i18n="footer_subscribe_button">訂閱</button>
+                    </form>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_about">關於我們</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_brand">品牌故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_team">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_contact">合作洽談</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-3" data-i18n="footer_category">專欄分類</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Culture</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food & Drink</a></li>
+                        <li><a href="#" class="hover:text-white transition">Japan View</a></li>
+                        <li><a href="#" class="hover:text-white transition">Artisan Life</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                
+                <div class="order-3 sm:order-1 text-center sm:text-left text-gray-400 mt-6 sm:mt-0">
+                    <p>&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+                    <p class="mt-1" data-i18n="footer_issue_title">001期美好駁二</p>
+                </div>
+
+                <div class="order-2 text-center text-gray-400 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_terms">服務條款</a>
+                    <a href="#" class="hover:text-white transition-colors duration-300" data-i18n="footer_privacy">隱私權政策</a>
+                </div>
+
+                <div class="order-1 sm:order-3 flex justify-center space-x-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-line"></i></a> 
+                    <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
